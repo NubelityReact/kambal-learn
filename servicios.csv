@@ -1,0 +1,11 @@
+"Descripcion del Servicio Valores: Texto, Max 128 caracteres","Precio, Valores: cifras numericas sin decimales MAYOR A 0","Se palican descuentos a este servicio?, Valores:  0 (no), 1 (Si)","Estatus, Valores: Activo, Inactivo","El Servicio es es facturable?, Valores:  Si, No","Categoria, Valores: miselaneo,colegiatura"
+SERVICIO 1,1000,0,Activo,No,colegiatura
+SERVICIO 2,50,0,Activo,No,miselaneo
+SERVICIO 3,890,0,Activo,Si,colegiatura
+SERVICIO 4,1000,0,Activo,Si,miselaneo
+SERVICIO 5,1000,1,Activo,Si,colegiatura
+SERVICIO 6,1000,1,Activo,Si,miselaneo
+SERVICIO 7,50,1,Activo,Si,colegiatura
+SERVICIO 8,890,1,Activo,Si,miselaneo
+SERVICIO 9,1000,1,Activo,Si,colegiatura
+SERVICIO 10,1000,1,Activo,Si,miselaneo
