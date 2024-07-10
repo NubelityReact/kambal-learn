@@ -5734,7 +5734,7 @@ class Kambal {
         if ($errorMSG == "") {
             include './conexion.php';
             //$sql = "UPDATE user SET idirole = '$idirole', password='$pwd', Nombre = '$Nombre', apellido_paterno = '$apellido_paterno', apellido_materno = '$apellido_materno', user = '$user', email = '$email', estatus = '$estatus' WHERE user.idiuser = $idiuser";
-            $sql = "UPDATE tbuser SET idirole = '$idirole', password='$pwd', user = '$user', estatus = '$estatus' WHERE tbuser.idiuser = $idiuser;";
+            $sql = "UPDATE tbuser SET idirole = '$idirole', password='$pwd_statement', user = '$user', estatus = '$estatus' WHERE tbuser.idiuser = $idiuser;";
             $sql .= "UPDATE datos_generales SET  nombre = '$Nombre', apellido_paterno = '$apellido_paterno', apellido_materno = '$apellido_materno', email = '$email' WHERE datos_generales.idigenerales = $idigenerales";
             if ($conn->multi_query($sql) === TRUE) {
                 echo "success";
