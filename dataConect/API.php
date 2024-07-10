@@ -5626,7 +5626,11 @@ class Kambal {
         if (empty($_POST["sena"])) {
             $errorMSG .= "Contraseña is required ";
         } else {
-            $sena = $_POST["sena"];
+            //$sena = $_POST["sena"];
+            $pwd = $this->xss($_POST["sena"]);
+            $pwd_sha256 = hash('sha256', $pwd);
+            $pwd_statement = ", password='$pwd_sha256'";
+ 
         }
 
         if ($errorMSG == "") {
@@ -5640,7 +5644,7 @@ class Kambal {
                 //echo "success";
                 $last_id = $conn->insert_id;
                 try {
-                    $sql2 = "INSERT tbuser (idigenerales, idirole, user, password, estatus, categoria) values ('$last_id', '$idirole', '$user', '$sena', 'Activo', 'admin');";
+                    $sql2 = "INSERT tbuser (idigenerales, idirole, user, password, estatus, categoria) values ('$last_id', '$idirole', '$user', '$pwd_statement', 'Activo', 'admin');";
                     if ($conn->query($sql2) === TRUE) {
                         echo "success";
                     } else {
