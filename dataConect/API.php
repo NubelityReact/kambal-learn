@@ -5722,6 +5722,8 @@ class Kambal {
             $errorMSG .= "password is required ";
         } else {
             $pwd = $this->xss($_POST["psd"]);
+            $pwd_sha256 = hash('sha256', $pwd);
+            $pwd_statement = ", password='$pwd_sha256'";
         }
 
         // redirect to success page
