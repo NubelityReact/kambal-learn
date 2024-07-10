@@ -5644,7 +5644,7 @@ class Kambal {
                 //echo "success";
                 $last_id = $conn->insert_id;
                 try {
-                    $sql2 = "INSERT tbuser (idigenerales, idirole, user, password, estatus, categoria) values ('$last_id', '$idirole', '$user', '$pwd_statement', 'Activo', 'admin');";
+                    $sql2 = "INSERT tbuser (idigenerales, idirole, user, password, estatus, categoria) values ('$last_id', '$idirole', '$user', '$pwd_sha256', 'Activo', 'admin');";
                     if ($conn->query($sql2) === TRUE) {
                         echo "success";
                     } else {
@@ -5734,7 +5734,7 @@ class Kambal {
         if ($errorMSG == "") {
             include './conexion.php';
             //$sql = "UPDATE user SET idirole = '$idirole', password='$pwd', Nombre = '$Nombre', apellido_paterno = '$apellido_paterno', apellido_materno = '$apellido_materno', user = '$user', email = '$email', estatus = '$estatus' WHERE user.idiuser = $idiuser";
-            $sql = "UPDATE tbuser SET idirole = '$idirole', password='$pwd_statement', user = '$user', estatus = '$estatus' WHERE tbuser.idiuser = $idiuser;";
+            $sql = "UPDATE tbuser SET idirole = '$idirole', password='$pwd_sha256', user = '$user', estatus = '$estatus' WHERE tbuser.idiuser = $idiuser;";
             $sql .= "UPDATE datos_generales SET  nombre = '$Nombre', apellido_paterno = '$apellido_paterno', apellido_materno = '$apellido_materno', email = '$email' WHERE datos_generales.idigenerales = $idigenerales";
             if ($conn->multi_query($sql) === TRUE) {
                 echo "success";
