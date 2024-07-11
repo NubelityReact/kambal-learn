@@ -88,6 +88,19 @@
     }
 </script>
 <script type="text/javascript" src="asset/js/jquery-mask.js"></script>
+<script>
+$(".auth_userkey_request_login_url").click(function () {
+    var globalUserName = "<?php echo $globalUserName; ?>"
+    var loginurl = auth_userkey_request_login_url(globalUserName);//auntentica con moodle
+    var isurl = isValidURL(loginurl);//Vaida si moodle regreso un url true/false
+    if (isurl) {//if true
+        location.href = loginurl;
+    } else {
+
+    }
+});
+</script>
+<script src="asset/js/moodle.js?v=2"></script>
 
 </body>
 
