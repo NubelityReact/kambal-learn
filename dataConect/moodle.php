@@ -281,8 +281,8 @@ class moodle {
                     'email' => $email, //unique
                     'auth' => 'manual',
                     //'lang' => 'es',
-                    //'description' => 'IZZI',
-                    //'institution' => 'IZZI'
+                    'description' => 'IZZI',
+                    'institution' => 'IZZI'
                 );
                 $users = array($user); // must be wrapped in an array because it's plural.
                 $param = array("users" => $users); // the paramater to send
