@@ -1,46 +1,8 @@
 <?php
 
-/**
- * 1: valida y busca los datos de la organizacion
- * 2: valida el acceso del usuario en la db de la organizacion
- * 3: carga variables de entorno si access true
- */
-$errorMSG = "";
-//ORG
-if (empty($_POST["org"])) {
-    $errorMSG .= "org is required ";
-} else {
-    $org = $_POST["org"];
-}
+access();
 
-if ($errorMSG == "") {
-    include '../dataConect/kambal.php';
-    $sql = "SELECT idiorganization, dbusername, dbpassword, dbname, privatekey, servername  from organization where shortname = '$org'";
-    $result = $conn->query($sql);
-    if ($result->num_rows == 1) {
-        while ($row = $result->fetch_assoc()) {
-            $idiorganization = $row["idiorganization"];
-            $dbusername = $row["dbusername"];
-            $dbpassword = $row["dbpassword"];
-            $dbname = $row["dbname"];
-            $privatekey = $row["privatekey"];
-            $servername = $row["servername"];
-        }
-        access($idiorganization, $servername, $dbusername, $dbpassword, $dbname, $privatekey);
-    } else {
-        print_r("su organización no existe en Kambal!");
-    }
-    $conn->close();
-} else {
-    if ($errorMSG == "") {
-        echo "Something went wrong :(";
-    } else {
-        echo $errorMSG;
-    }
-}
-
-//Select Data From a MySQL Database to ORG
-function access($idiorganization, $servername, $dbusername, $dbpassword, $dbname, $privatekey) {
+function access() {
     $errorMSG = "";
     //Nombre
     if (empty($_POST["usuario"])) {
@@ -54,15 +16,8 @@ function access($idiorganization, $servername, $dbusername, $dbpassword, $dbname
     } else {
         $Password = set_password_hash($_POST["Password"]);
     }
-
     if ($errorMSG == "") {
-        // Create connection
-        $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-        mysqli_query($conn, "SET CHARACTER SET 'utf8'");
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        include '../dataConect/conexion.php';
         $sql = "SELECT
                 tbuser.idiuser,
                 tbuser.idigenerales,
@@ -110,7 +65,7 @@ function access($idiorganization, $servername, $dbusername, $dbpassword, $dbname
             //Load vars session  
             $_SESSION['loggedin'] = true;
             $_SESSION['start'] = time();
-            $_SESSION['idiorganization'] = $idiorganization;
+            $_SESSION['idiorganization'] = 1;
             while ($row = $result->fetch_assoc()) {
                 $_SESSION['idiuser'] = $row["idiuser"];
                 $_SESSION['idigenerales'] = $row["idigenerales"];
