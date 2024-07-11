@@ -141,6 +141,11 @@ date_default_timezone_set($forcetimezone);
                                                 <i class="ti-help-alt"></i> Ayuda
                                             </a>
                                         </li>
+                                         <li>
+                                            <a href="#" class="auth_userkey_request_login_url">
+                                                <i class="ti-new-window"></i> Ir al LMS
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
