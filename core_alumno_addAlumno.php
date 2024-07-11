@@ -317,7 +317,7 @@
     <script src="asset/js/validaCURP.js"></script>
     <script src="asset/js/webcam.min.js"></script>
     <script src="asset/js/addalumno_webcam.js"></script>
-    <script src="asset/js/addalumno_forrms.js"></script>
+    <script src="asset/js/addalumno_forrms.js?v=2.1"></script>
 
     <link href="sign/css/jquery.signaturepad.css" rel="stylesheet">
     <script src="sign/js/numeric-1.2.6.min.js"></script> 
