@@ -17,6 +17,7 @@ function submitForm() {
     var r = confirm("Está seguro de inscribir a este alumno?");
     if (r) {
         swalert('Espere!', 'Procesando...', 'info');
+        var idigenerales = $("#idigenerales").val();
         var idialumno = $("#idialumno").val();
         var GrupoId = $("#GrupoId").val();
         $("#spinner-form").html('<div class="alert alert-info"><strong>Espere</strong> Cargando Contenido ... Esta acción puede tardar unos momentos <i class="pe-7s-config pe-spin pe-2x pe-va"></i></div>');
@@ -32,6 +33,7 @@ function submitForm() {
                     formError();
                     submitMSG(false, text);
                 } else {
+                    restore_password(idigenerales);
                     enrolToMoodle(idialumno, matricula);
                     enrolStudent(idialumno, GrupoId);
                     formSuccess(idialumno, GrupoId);
@@ -49,6 +51,21 @@ function submitForm() {
     }
     //alert(txt);
 }
+
+function restore_password(idigenerales) {
+    $.ajax({
+        type: "POST",
+        url: "dataConect/API.php",
+        data: "action=restore_password&idigenerales=" + idigenerales+"&new_password=123456789",
+        success: function (text) {
+            alert('restore_password');
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('error');
+        }
+    });
+}
+
 
 function enrolToMoodle(idialumno, matricula) {
     var moodle = $('#moodle').val();
