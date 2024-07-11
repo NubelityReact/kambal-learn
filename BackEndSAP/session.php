@@ -6,6 +6,7 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     //Set global vars in instance logedin
     //Load vars session ORG
+    $globalUserName = $_SESSION['globalUserName'];
     $fullname = $_SESSION['fullname'];
     $shortname = $_SESSION['shortname'];
     $summary = $_SESSION['summary'];
