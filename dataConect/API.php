@@ -4985,7 +4985,7 @@ class Kambal {
                 //Agrega colegiaturas
                 $this->setPaymentPlan($last_id, intval(0), $periodo, $idiplan);
                 //setPaymentPlan($idialumno, $cuatrimestre, $periodo, $idiplan)
-                //$this->restore_password_idigenerales($last_id, '123456789');
+                $this->restore_password_idigenerales($last_id, '123456789');
 
                 $rows = array();
                 $data = array(
@@ -5626,11 +5626,8 @@ class Kambal {
         if (empty($_POST["sena"])) {
             $errorMSG .= "Contraseña is required ";
         } else {
-            //$sena = $_POST["sena"];
             $pwd = $this->xss($_POST["sena"]);
             $pwd_sha256 = hash('sha256', $pwd);
-            $pwd_statement = ", password='$pwd_sha256'";
- 
         }
 
         if ($errorMSG == "") {
@@ -5727,7 +5724,6 @@ class Kambal {
         } else {
             $pwd = $this->xss($_POST["psd"]);
             $pwd_sha256 = hash('sha256', $pwd);
-            $pwd_statement = ", password='$pwd_sha256'";
         }
 
         // redirect to success page
@@ -11362,8 +11358,9 @@ class Kambal {
 
         if ($errorMSG == "") {
             include './conexion.php';
+            $pwd_sha256 = hash('sha256', $new_password);
             $sql = "UPDATE tbuser 
-            SET PASSWORD = sha2 ( '$new_password', 256 ) 
+            SET PASSWORD = '$pwd_sha256'
             WHERE
             idigenerales = $idigenerales;";
             if ($conn->multi_query($sql) === TRUE) {
@@ -11385,8 +11382,9 @@ class Kambal {
         $errorMSG = "";
         if ($errorMSG == "") {
             include './conexion.php';
+            $pwd_sha256 = hash('sha256', $new_password);
             $sql = "UPDATE tbuser 
-            SET PASSWORD = sha2 ( '$new_password', 256 ) 
+            SET PASSWORD = '$pwd_sha256'
             WHERE
             idigenerales = $idigenerales;";
             if ($conn->multi_query($sql) === TRUE) {
