@@ -135,6 +135,7 @@ function access($idiorganization, $servername, $dbusername, $dbpassword, $dbname
                 $_SESSION['email'] = $row["email"];
                 $_SESSION['edit'] = $row["edit"];
                 $_SESSION['role'] = $row["role"];
+                $_SESSION['globalUserName'] = $row["user"];
                 $_SESSION['nombre'] = $row["nombre"] . ' ' . $row["apellido_paterno"] . ' ' . $row["apellido_materno"];
             }
 
