@@ -6,24 +6,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <?php
 }
 $errorMSG = "";
-//idialumno
-if (empty($_GET["org"])) {
-    $errorMSG = "org is required ";
-} else {
-    $org = $_GET["org"];
-}
+
 // redirect to success page
 if ($errorMSG == "") {
-    include './dataConect/kambal.php';
-    $sql = "SELECT * FROM organization  where shortname = '$org'";
+    include './dataConect/conexion.php';
+    $sql = "SELECT * FROM tbconfig;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            $idiorganization = $row["idiorganization"];
+            $idiorganization = $row["idiconfig"];
             $fullname = $row["fullname"];
             $summary = $row["summary"];
-            $logo = $row["logo"];
-            $logo_back_ground = $row["logo_back_ground"];
+            $logo = $row["frontpageimage"];
+            $logo_back_ground = "back.png";
         }
         //Set Coockie idiorg
         $cookie_idiorganization = "_org";
