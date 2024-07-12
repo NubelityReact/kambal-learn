@@ -10,19 +10,19 @@ if (empty($_GET["idinotification"])) {
 } else {
     $idinotification = $_GET["idinotification"];
 }
-
+ 
 // redirect to success page
 if ($errorMSG == "") {
-    include './dataConect/kambal.php';
-    $sql = "SELECT idiorganization, fullname, summary, logo_back_ground, logo from organization where shortname = '$org'";
+    include './dataConect/conexion.php';
+    $sql = "SELECT * FROM tbconfig;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            $idiorganization = $row["idiorganization"];
+            $idiorganization = $row["idiconfig"];
             $fullname = $row["fullname"];
             $summary = $row["summary"];
-            $logo_back_ground = $row["logo_back_ground"];
-            $logo = $row["logo"];
+            $logo = $row["frontpageimage"];
+            $logo_back_ground = "back.png";
         }
         //Set Coockie idiorg
         $cookie_idiorganization = "_org";
@@ -70,7 +70,7 @@ if ($errorMSG == "") {
             body {
                 display: table;
                 position: relative;
-                background-image: url(asset/images/back.png);
+                background-image: url(asset/images/<?php echo "$logo_back_ground";?>);
                 background-size: cover;
                 background-attachment: fixed;
                 padding: 0px 0;
@@ -123,7 +123,7 @@ if ($errorMSG == "") {
             <div class="row">
                 <div class="col-md-7 col-md-offset-9 center-block" style="margin-left:  auto; margin-right: auto;">
                     <div class="login-panel panel panel-default tops center-block">
-                        <div class="panel-heading"><div><a href="index.php"><img src="asset/images/kambal.png" width="100%"></a></div>
+                        <div class="panel-heading"><div><a href="index.php"><img src="asset/images/logo/<?php echo "$logo";?>" width="25%"></a></div>
                             <h3 class="panel-title"></h3><br>   
                         </div>
                         <div class="panel-body">
