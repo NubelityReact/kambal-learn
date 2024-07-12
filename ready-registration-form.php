@@ -1,23 +1,24 @@
 <?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    ?> 
+    <script> location.href = "menu.php";</script>
+    <?php
+} 
 $errorMSG = "";
-//idialumno
-if (empty($_GET["org"])) {
-    $errorMSG = "org is required ";
-} else {
-    $org = strtolower($_GET["org"]);
-}
+
 // redirect to success page
 if ($errorMSG == "") {
-    include './dataConect/kambal.php';
-    $sql = "SELECT idiorganization, fullname, summary, logo_back_ground, logo from organization where shortname = '$org'";
+    include './dataConect/conexion.php';
+    $sql = "SELECT * FROM tbconfig;";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            $idiorganization = $row["idiorganization"];
+            $idiorganization = $row["idiconfig"];
             $fullname = $row["fullname"];
             $summary = $row["summary"];
-            $logo_back_ground = $row["logo_back_ground"];
-            $logo = $row["logo"];
+            $logo = $row["frontpageimage"];
+            $logo_back_ground = "back.png";
         }
         //Set Coockie idiorg
         $cookie_idiorganization = "_org";
@@ -118,7 +119,7 @@ if ($errorMSG == "") {
             <div class="row">
                 <div class="col-md-12 col-md-offset-9 center-block" style="margin-left:  auto; margin-right: auto;">
                     <div class="login-panel panel panel-default tops center-block">
-                        <div class="panel-heading"><div><a href="index.php"><img src="asset/images/logo/<?php echo "$logo";?>" width="100%"></a></div>
+                        <div class="panel-heading"><div><a href="index.php"><img src="asset/images/logo/<?php echo "$logo";?>" width="15%"></a></div>
                             <h3 class="panel-title"></h3><br>   
                         </div>
                         <div class="panel-body">
