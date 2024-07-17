@@ -731,6 +731,18 @@ CREATE TABLE `sat_claveprodserv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
 
 --
+-- Estructura de tabla para la tabla `sat_claveunidad`
+--
+
+CREATE TABLE `sat_claveunidad` (
+  `id` int(11) NOT NULL,
+  `Clave` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `Descripcion` varchar(200) CHARACTER SET latin1 DEFAULT NULL,
+  `Simbolo` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `Estatus` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
+
+--
 -- Estructura de tabla para la tabla `sat_formapago`
 --
 
