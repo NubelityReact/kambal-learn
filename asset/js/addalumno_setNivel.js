@@ -15,7 +15,7 @@ function getPlantel() {
             txt += '<select class="form-control" id="idicampus" name="idicampus" onchange="getOferta()" required>';
             txt += '<option value="">Seleccione plantel</option>';
             for (x in date) {
-                txt += '<option value="' + date[x].clave + '" class="' + date[x].idicampus + '"><i class="text-info">' + date[x].campus + '</option>';
+                txt += '<option value="' + date[x].idicampus + '" class="' + date[x].clave + '"><i class="text-info">' + date[x].campus + '</option>';
             }
             txt += "</select>";
             document.getElementById("selectPlantel").innerHTML = txt;
@@ -29,9 +29,9 @@ function getPlantel() {
             });
         },
         error: function (jqXHR, textStatus, errorThrown) {
-//            //console.log(jqXHR);
-//            //console.log(textStatus);
-//            //console.log(errorThrown);
+            //            //console.log(jqXHR);
+            //            //console.log(textStatus);
+            //            //console.log(errorThrown);
             //alert("No fue posible conectar con el servidor");
             document.getElementById("selectPlantel").innerHTML = errorThrown;
         }

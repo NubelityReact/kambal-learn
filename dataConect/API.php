@@ -3958,7 +3958,7 @@ class Kambal {
     function getPlantel() {
         header('Content-Type: application/json');
         include './conexion.php';
-        $sql = "SELECT * FROM campus";
+        $sql = "SELECT * FROM campus where campus.deleted=0 AND campus.suspended=0";
         $result = $conn->query($sql);
         $rows = array();
         if ($result->num_rows > 0) {
