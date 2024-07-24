@@ -241,34 +241,9 @@ class api_encrypt_password {
                 tbconfig.defaultcity,
                 tbconfig.lang,
                 tbconfig.fecha,
-                factura_emisor.id,
-                factura_emisor.rfc,
-                factura_emisor.Nombre,
-                factura_emisor.persona,
-                factura_emisor.Calle,
-                factura_emisor.NoExterior,
-                factura_emisor.NoInterior,
-                factura_emisor.Colonia,
-                factura_emisor.Localidad,
-                factura_emisor.Referencia,
-                factura_emisor.Municipio,
-                factura_emisor.estado,
-                factura_emisor.pais,
-                factura_emisor.cp,
-                factura_emisor.regimen_fiscal,
-                factura_emisor.banco,
-                factura_emisor.NoCuenta,
-                factura_emisor.ClaveInterbancaria,
-                factura_emisor.Telefono,
-                factura_emisor.Estatus,
-                factura_emisor.esPruebas,
-                factura_emisor.Email,
                 tbconfig.deployment_folder
                 FROM
-                tbconfig
-                INNER JOIN factura_emisor ON tbconfig.idifactura = factura_emisor.id
-                WHERE
-                tbconfig.idifactura = factura_emisor.id";
+                tbconfig";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
