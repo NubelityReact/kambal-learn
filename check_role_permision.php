@@ -30,7 +30,7 @@ if (in_array_r($extension[0], $role_list)) {
     ?> 
     <script>
         alert('No cuenta con los permisos para ingresar a este módulo');
-        //location.href = "menu.php";
+        location.href = "menu.php";
     </script>
     <?php
 
