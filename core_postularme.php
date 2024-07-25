@@ -150,10 +150,10 @@ if ($errorMSG == "") {
                                                     <input type="hidden" class="form-control" name="lms_course_id" id="lms_course_id" required>
 
                                                     <div id="oferta_form_inputs"></div>
-                                                    <div class="form-group">
+                                                    <!-- <div class="form-group">
                                                         <label for="Captcha" class="text-primary">Marque la casilla del Captcha</label>
                                                         <div class="g-recaptcha" data-sitekey="6Le8idYUAAAAALn8sfT60hwpKpts7bmwGtT6F9CW"></div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="col-sm-5">
                                                     <div class="card">
@@ -600,7 +600,7 @@ if ($errorMSG == "") {
             $("#edad").val(edad);
         });
     </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </body>
 </html>
 

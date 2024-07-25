@@ -193,9 +193,9 @@ if ($errorMSG == "") {
                             <input type="email" class="form-control" id="correo" name="correo" maxlength="100" required>
                             <div class="help-block with-errors text-danger"></div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="g-recaptcha" data-sitekey="6Le8idYUAAAAALn8sfT60hwpKpts7bmwGtT6F9CW"></div>
-                        </div>
+                        </div> -->
                         <!-- Change this to a button or input when using this as a form -->
                         <button type="submit" id="form-submit" class="btn btn-success pull-right float-right">Buscar</button><br>
                     </fieldset>
@@ -234,7 +234,6 @@ if ($errorMSG == "") {
 <script src="asset/js/validator.min.js"></script>
 <script src="asset/js/forgot-password.js"></script>
 <script src="asset/js/form-scripts.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 </html>

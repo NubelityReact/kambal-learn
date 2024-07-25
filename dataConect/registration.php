@@ -435,21 +435,21 @@ class registro {
     function forgotPassword() {
         $errorMSG = "";
         //g-recaptcha-response: 
-        if (empty($_POST["g-recaptcha-response"])) {
-            $errorMSG = "Marque la casilla del recaptcha";
-        } else {
-            $recapcha = $_POST["g-recaptcha-response"];
-        }
+        // if (empty($_POST["g-recaptcha-response"])) {
+        //     $errorMSG = "";
+        // } else {
+        //     $recapcha = $_POST["g-recaptcha-response"];
+        // }
         if (empty($_POST["correo"])) {
             $errorMSG = " correo is required";
         } else {
             $email = $_POST["correo"];
         }
-        if (empty($_POST["org"])) {
-            $errorMSG .= " org is required";
-        } else {
-            $org = $_POST["org"];
-        }
+        // if (empty($_POST["org"])) {
+        //     $errorMSG .= " org is required";
+        // } else {
+        //     $org = $_POST["org"];
+        // }
         /**
          * verificar si el correo existe
          * si enviar link de recuperacion
@@ -780,11 +780,11 @@ sitio.";
             $comentarios = $_POST["comentarios"];
         }
         //g-recaptcha-response: 
-        if (empty($_POST["g-recaptcha-response"])) {
-            $errorMSG .= "Marque la casilla del recaptcha";
-        } else {
-            $recapcha = $_POST["g-recaptcha-response"];
-        }
+        // if (empty($_POST["g-recaptcha-response"])) {
+        //     $errorMSG .= "Marque la casilla del recaptcha";
+        // } else {
+        //     $recapcha = $_POST["g-recaptcha-response"];
+        // }
         //post input string query_action
         if (empty($_POST["query_action"])) {
             $errorMSG .= "query_action is required ";
@@ -1046,11 +1046,11 @@ sitio.";
         }
 
         //g-recaptcha-response: 
-        if (empty($_POST["g-recaptcha-response"])) {
-            $errorMSG .= "Marque la casilla del recaptcha";
-        } else {
-            $recapcha = $_POST["g-recaptcha-response"];
-        }
+        // if (empty($_POST["g-recaptcha-response"])) {
+        //     $errorMSG .= "Marque la casilla del recaptcha";
+        // } else {
+        //     $recapcha = $_POST["g-recaptcha-response"];
+        // }
 
         if ($errorMSG == "") {
             include './conexion.php';
