@@ -1,0 +1,7 @@
+.env*
+*.csv
+docker/*
+docker-compose.yml
+
+.gitignore
+.gitattributes

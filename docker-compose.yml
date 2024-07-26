@@ -1,0 +1,35 @@
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: ./docker/Dockerfile.php
+    container_name: php_web_learn
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./src:/var/www/html/control-escolar
+    depends_on:
+      - db
+    environment:
+      - DB_HOST_IP=${DB_HOST_IP}
+      - DB_USER_MODEL=${DB_USER_MODEL}
+      - DB_MODEL_PSW=${DB_MODEL_PSW}
+      - DB_MODEL_NAME=${DB_MODEL_NAME}
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.mariadb
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ${DB_MODEL_NAME}
+      MYSQL_USER: ${DB_USER_MODEL}
+      MYSQL_PASSWORD: ${DB_MODEL_PSW}
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db_data:
