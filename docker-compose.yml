@@ -3,6 +3,10 @@ services:
     build: 
       context: .
       dockerfile: ./docker/Dockerfile.php
+      args:
+      - SMTP_EMAIL=${SMTP_EMAIL}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - SMTP_SERVER=${SMTP_SERVER}
     container_name: php_web_learn
     ports:
       - "127.0.0.1:8080:80"
