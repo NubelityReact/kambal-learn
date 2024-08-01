@@ -288,6 +288,20 @@ CREATE TABLE `cNiveles` (
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
+INSERT INTO `cNiveles` (`NivelId`, `deleted`, `suspended`, `Descripcion`, `Abreviatura`) VALUES
+(1, 0, 0, 'Maestría', 'M'),
+(2, 0, 0, 'Curso', 'C'),
+(3, 0, 0, 'Diplomado', 'D'),
+(4, 0, 0, 'Webinar', 'W'),
+(5, 0, 0, 'Taller', 'T'),
+(6, 1, 0, 'Educación Básica', 'B'),
+(7, 0, 0, 'Maternal', 'L'),
+(8, 1, 0, 'Licencuatura', 'L'),
+(9, 0, 0, 'Ingenieria', 'I'),
+(10, 0, 0, 'Licenciatura', 'L'),
+(11, 0, 0, 'Prepa En linea ', 'pp'),
+(12, 0, 0, 'UVM', 'uv');
+
 --
 -- Estructura de tabla para la tabla `credencial`
 --
@@ -835,6 +849,16 @@ CREATE TABLE `notifications` (
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
+
+INSERT INTO `notifications` (`idinotification`, `suspended`, `deleted`, `name`, `description`, `comments`, `subject`, `message`, `sender_email`, `sender_name`, `files`, `files_name`, `files_size`, `files_type`, `created`) VALUES
+(1, 0, 1, 'Nuevo registro', 'Nuevo registro', 'En este módulo puede crear una plantilla de notificación de correo electrónico que será enviada de manera automática a los destinatarios que así lo requieran en base a una acción determinada del sistema', 'Cabeceras de notificación', '<h2>Hemos recibido tu información!</h2><p>En breve nos pondremos en contacto contigo.&nbsp;</p><blockquote><p>Estarás recibiendo un correo electrónico con instrucciones para continuar tu proceso.<br>NOTA consulte su carpeta de spam</p></blockquote><p>&nbsp;</p>', 'mailo@gmail.com', 'Cabeceras de notificación', NULL, '', NULL, NULL, '2020-10-07 12:28:53'),
+(2, 0, 0, 'Registro al Curso: Herramientas digitales para la docencia a distancia', '¡GRACIAS POR TU REGISTRO!', 'Cuando un Aspirante se registra a través del formulario de Kambal, se envía envía una respuesta automática al correo electrónico que se registro y contiene instrucciones que le explican el proceso a seguir una ves concluido el registro.\nUsted puede agregar a la lista de destinatarios a los usuarios que requieran ser informados cuando este evento suceda.', 'Registro al Curso: Herramientas digitales para la docencia a distancia', '<h4>Registro al Curso: Herramientas digitales para la docencia a distancia</h4><h4>Imparte: Dra. Alma Elisa Delgado Coellar</h4><h4>Para iniciar, debes seguir estos sencillos pasos:</h4><ol><li>Ingresa al sitio web: <a href=\"https://kambal.com.mx/learn/\">https://kambal.com.mx/learn/</a></li><li>Inicia la sesión con tu usuario y contraseña</li><li>Tu usuario: Es el correo con el que te diste de alta</li><li>Tu contraseña es: 123456789</li><li>Al ingresar a la liga antes referida, dirígete al Curso herramientas digitales para la docencia a distancia<br><br><i>Si no tienes tiempo en este momento puedes continuar más tarde.</i><br><i>Estarás recibiendo un correo electrónico con instrucciones para continuar tu proceso.</i><br><i>NOTA consulte su carpeta de spam</i></li></ol>', 'development@focusonservices.com', 'Kambal Learn', NULL, '', NULL, NULL, '2020-10-07 12:35:57'),
+(3, 0, 0, 'Kambal Talent | Asignación', 'Kambal Talent | Asignación', 'En este módulo puede crear una plantilla de notificación de correo electrónico que será enviada de manera automática a los destinatarios que así lo requieran en base a una acción determinada del sistema', 'Kambal Talent | Asignación', '<h4><strong>Le informamos que tiene nuevas asignaciones</strong></h4><h4>Revise su Pull de Candidatos</h4>', 'development@focusonservices.com', 'Kambal Talent', NULL, '', NULL, NULL, '2020-10-07 12:47:11'),
+(4, 0, 0, 'Restablecimiento de contraseña', 'Restablecimiento de contraseña', 'Cuando un usuario solicita el restablecimiento de contraseña, Kambal envía una respuesta automática al correo electrónico de la cuenta del usuario con instrucciones que le explican como restaurar la contraseña.\nUsted puede agregar a la lista de destinatarios a los usuarios que requieran ser informados cuando este evento suceda.', 'Restablecimiento de contraseña', '<blockquote><h2>Restablecimiento de contraseña solicitada&nbsp;</h2></blockquote>', 'development@focusonservices.com', 'Kambal Talent', NULL, '', NULL, NULL, '2020-10-07 13:00:00');
+INSERT INTO `notifications` (`idinotification`, `suspended`, `deleted`, `name`, `description`, `comments`, `subject`, `message`, `sender_email`, `sender_name`, `files`, `files_name`, `files_size`, `files_type`, `created`) VALUES
+(7, 0, 0, 'Respuesta automática cursos:', 'Respuesta automática cursos:', 'Respuesta automática cursos:', '¡REGISTRO EXITOSO!', '<h2><strong>¡REGISTRO EXITOSO!</strong><br>&nbsp;</h2><p>Gracias por interesarte en nuestro curso, ahora que tenemos tus datos más importantes, en breve un agente se pondrá en contacto contigo para continuar el proceso de inscripción.</p><p>Si tienes más dudas puedes escribirnos a <a href=\"mailto:contacto@ortega-vasconcelos.com\">contacto@ortega-vasconcelos.com</a> o a nuestro whastapp <a href=\"wa.link/y91yl8\">wa.link/y91yl8</a></p>', 'development@focusonservices.com', 'Instituto Ortega Vasconcelos De México AC', NULL, '', NULL, NULL, '2020-10-27 17:06:03'),
+(8, 0, 0, 'Respuesta automática webinars:', 'Respuesta automática webinars:', 'Respuesta automática webinars:', '¡GRACIAS POR TU REGISTRO!', '<h2><strong>¡GRACIAS POR TU REGISTRO!</strong></h2><p>Te recordamos que este webinar es totalmente gratuito, los datos de acceso y la demás información te llegarán en breve, siempre revisa tu bandeja de correo no deseado o SPAM.</p><p>Si tienes más dudas puedes escribirnos a <a href=\"mailto:contacto@ortega-vasconcelos.com\">contacto@ortega-vasconcelos.com</a> o a nuestro whastapp <a href=\"wa.link/y91yl8\">wa.link/y91yl8</a></p>', 'development@focusonservices.com', 'Instituto Ortega Vasconcelos De México AC', NULL, '', NULL, NULL, '2020-10-27 17:09:40');
+
 --
 -- Estructura de tabla para la tabla `notifications_events`
 --
@@ -848,6 +872,14 @@ CREATE TABLE `notifications_events` (
   `comments` mediumtext DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+INSERT INTO `notifications_events` (`idievent`, `suspended`, `deleted`, `name`, `description`, `comments`) VALUES
+(1, 0, 0, 'Aspirante > Nuevo candidato', 'addDatosGenerales', ' Agrega un registro a la tabla de datos Generales\r\n'),
+(2, 0, 0, 'Aspirante > Actualización de datos del candidato', 'putGenerales', NULL),
+(3, 0, 0, 'Aspirante > Eliminar un candidato', 'borrarAspirante', NULL),
+(4, 0, 0, 'Aspirante > Asignación de candidato', 'asignarAspirante', NULL),
+(5, 0, 0, 'Usuario > Restablecer contraseña ', 'forgotPassword', 'Olvido su contraseña'),
+(6, 0, 0, 'Aspirante > Nuevo documento', 'newDocument', NULL);
 
 --
 -- Estructura de tabla para la tabla `notifications_targets`
@@ -1073,7 +1105,8 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (`idirole`, `role`, `edit`) VALUES
 (1, 'root', 1),
-(2, 'Estudiante', 1);
+(2, 'Estudiante', 0),
+(3, 'Administrador', 1);
 
 --
 -- Estructura de tabla para la tabla `role_as_permiso`
