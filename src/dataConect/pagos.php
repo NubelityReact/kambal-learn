@@ -255,24 +255,24 @@ class pagos {
         //     $idifactura = $_POST["idifactura"];
         // }
         //fullname
-        if (empty($_POST["fullname"])) {
-            $errorMSG .= "fullname is required ";
-        } else {
+        //if (empty($_POST["fullname"])) {
+        //    $errorMSG .= "fullname is required ";
+        //} else {
             $fullname = $_POST["fullname"];
             $Nombre = $fullname;
-        }
+        //}
         //shortname
-        if (empty($_POST["shortname"])) {
-            $errorMSG .= "shortname is required ";
-        } else {
+        //if (empty($_POST["shortname"])) {
+        //    $errorMSG .= "shortname is required ";
+        //} else {
             $shortname = $_POST["shortname"];
-        }
+        //}
         //summary
-        if (empty($_POST["summary"])) {
-            $errorMSG .= "summary is required ";
-        } else {
+        //if (empty($_POST["summary"])) {
+        //    $errorMSG .= "summary is required ";
+        //} else {
             $summary = $_POST["summary"];
-        }
+        //}
         //frontpageimage
         if (empty($_POST["frontpageimage"])) {
             $frontpageimage = "";
@@ -280,120 +280,122 @@ class pagos {
             $frontpageimage = $_POST["frontpageimage"];
         }
         //country
-        if (empty($_POST["country"])) {
-            $errorMSG .= "country is required ";
-        } else {
+        //if (empty($_POST["country"])) {
+        //    $errorMSG .= "country is required ";
+        //} else {
             $country = $_POST["country"];
-        }
+        //}
         //defaultcity
-        if (empty($_POST["defaultcity"])) {
-            $errorMSG .= "defaultcity is required ";
-        } else {
+        //if (empty($_POST["defaultcity"])) {
+        //    $errorMSG .= "defaultcity is required ";
+        //} else {
             $defaultcity = $_POST["defaultcity"];
-        }
+        //}
         //rfc
-        if (empty($_POST["rfc"])) {
-            $errorMSG .= "rfc is required ";
-        } else {
-            $rfc = $_POST["rfc"];
-        }
-        //persona
-        if (empty($_POST["persona"])) {
-            $errorMSG .= "persona is required ";
-        } else {
-            $persona = $_POST["persona"];
-        }
-        //Calle
-        if (empty($_POST["Calle"])) {
-            $errorMSG .= "Calle is required ";
-        } else {
-            $Calle = $_POST["Calle"];
-        }
-        //NoExterior
-        if (empty($_POST["NoExterior"])) {
-            $errorMSG .= "NoExterior is required ";
-        } else {
-            $NoExterior = $_POST["NoExterior"];
-        }
-        //NoInterior
-        if (empty($_POST["NoInterior"])) {
-            $NoInterior = "";
-        } else {
-            $NoInterior = $_POST["NoInterior"];
-        }
-        //Colonia
-        if (empty($_POST["Colonia"])) {
-            $errorMSG .= "Colonia is required ";
-        } else {
-            $Colonia = $_POST["Colonia"];
-        }
-        //Localidad
-        if (empty($_POST["Localidad"])) {
-            $errorMSG .= "Localidad is required ";
-        } else {
-            $Localidad = $_POST["Localidad"];
-        }
-        //Referencia
-        if (empty($_POST["Referencia"])) {
-            $errorMSG .= "Referencia is required ";
-        } else {
-            $Referencia = $_POST["Referencia"];
-        }
-        //Municipio
-        if (empty($_POST["Municipio"])) {
-            $errorMSG .= "Municipio is required ";
-        } else {
-            $Municipio = $_POST["Municipio"];
-        }
-        //estado
-        if (empty($_POST["estado"])) {
-            $errorMSG .= "estado is required ";
-        } else {
-            $estado = $_POST["estado"];
-        }
-        //cp
-        if (empty($_POST["cp"])) {
-            $errorMSG .= "cp is required ";
-        } else {
-            $cp = $_POST["cp"];
-        }
-        //banco
-        if (empty($_POST["banco"])) {
-            $errorMSG .= "banco is required ";
-        } else {
-            $banco = $_POST["banco"];
-        }
-        //NoCuenta
-        if (empty($_POST["NoCuenta"])) {
-            $errorMSG .= "NoCuenta is required ";
-        } else {
-            $NoCuenta = $_POST["NoCuenta"];
-        }
-        //ClaveInterbancaria
-        if (empty($_POST["ClaveInterbancaria"])) {
-            $errorMSG .= "ClaveInterbancaria is required ";
-        } else {
-            $ClaveInterbancaria = $_POST["ClaveInterbancaria"];
-        }
-        //Telefono
-        if (empty($_POST["Telefono"])) {
-            $errorMSG .= "Telefono is required ";
-        } else {
-            $Telefono = $_POST["Telefono"];
-        }
-        //website
-        if (empty($_POST["website"])) {
-            $errorMSG .= "website is required ";
-        } else {
-            $website = $_POST["website"];
-        }
-        //Email
-        if (empty($_POST["Email"])) {
-            $errorMSG .= "Email is required ";
-        } else {
-            $Email = $_POST["Email"];
-        }
 
+        
+        //if (empty($_POST["rfc"])) {
+        //    $errorMSG .= "rfc is required ";
+        //} else {
+            $rfc = $_POST["rfc"];
+        //}
+        
+        //persona
+        //if (empty($_POST["persona"])) {
+        //    $errorMSG .= "persona is required ";
+        //} else {
+            $persona = $_POST["persona"];
+        //}
+        //Calle
+        //if (empty($_POST["Calle"])) {
+        //    $errorMSG .= "Calle is required ";
+        //} else {
+            $Calle = $_POST["Calle"];
+        //}
+        //NoExterior
+        //if (empty($_POST["NoExterior"])) {
+        //    $errorMSG .= "NoExterior is required ";
+        //} else {
+            $NoExterior = $_POST["NoExterior"];
+        //}
+        //NoInterior
+        //if (empty($_POST["NoInterior"])) {
+        //    $NoInterior = "";
+        //} else {
+            $NoInterior = $_POST["NoInterior"];
+        //}
+        //Colonia
+        //if (empty($_POST["Colonia"])) {
+        //    $errorMSG .= "Colonia is required ";
+        //} else {
+            $Colonia = $_POST["Colonia"];
+        //}
+        //Localidad
+        //if (empty($_POST["Localidad"])) {
+        //    $errorMSG .= "Localidad is required ";
+        //} else {
+            $Localidad = $_POST["Localidad"];
+        //}
+        //Referencia
+        //if (empty($_POST["Referencia"])) {
+        //    $errorMSG .= "Referencia is required ";
+        //} else {
+            $Referencia = $_POST["Referencia"];
+        //}
+        //Municipio
+        //if (empty($_POST["Municipio"])) {
+        //    $errorMSG .= "Municipio is required ";
+        //} else {
+            $Municipio = $_POST["Municipio"];
+        //}
+        //estado
+        //if (empty($_POST["estado"])) {
+        //    $errorMSG .= "estado is required ";
+        //} else {
+            $estado = $_POST["estado"];
+        //}
+        //cp
+        //if (empty($_POST["cp"])) {
+        //    $errorMSG .= "cp is required ";
+        //} else {
+            $cp = $_POST["cp"];
+        //}
+        //banco
+        //if (empty($_POST["banco"])) {
+        //    $errorMSG .= "banco is required ";
+        //} else {
+            $banco = $_POST["banco"];
+        //}
+        //NoCuenta
+        //if (empty($_POST["NoCuenta"])) {
+        //    $errorMSG .= "NoCuenta is required ";
+        //} else {
+            $NoCuenta = $_POST["NoCuenta"];
+        //}
+        //ClaveInterbancaria
+        //if (empty($_POST["ClaveInterbancaria"])) {
+        //    $errorMSG .= "ClaveInterbancaria is required ";
+        //} else {
+            $ClaveInterbancaria = $_POST["ClaveInterbancaria"];
+        //}
+        //Telefono
+        //if (empty($_POST["Telefono"])) {
+        //    $errorMSG .= "Telefono is required ";
+        //} else {
+            $Telefono = $_POST["Telefono"];
+        //}
+        //website
+        //if (empty($_POST["website"])) {
+        //    $errorMSG .= "website is required ";
+        //} else {
+            $website = $_POST["website"];
+        //}
+        //Email
+        //if (empty($_POST["Email"])) {
+        //    $errorMSG .= "Email is required ";
+        //} else {
+            $Email = $_POST["Email"];
+        //}
         //lms_token
         if (empty($_POST["lms_token"])) {
             $lms_token = '';

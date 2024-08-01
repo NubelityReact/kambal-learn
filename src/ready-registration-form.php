@@ -1,4 +1,10 @@
 <?php
+// LOAD URLs COMPANY
+// MSALVARADO 31 JUL 2024
+$company_name = $_ENV['COMPANY_NAME'];
+$url_company_site = $_ENV['URL_COMPANY_SITE'];
+$url_company_facebook = $_ENV['URL_COMPANY_FACEBOOK'];
+
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     ?> 
@@ -47,8 +53,8 @@ if ($errorMSG == "") {
         <title>Registro | <?php echo "$fullname"; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta name="apple-mobile-Web-app-title" content="RockJS Framework®">
-        <meta name="author" content="RockJS Framework®|Focus On Services">
-        <meta name="keywords" content="Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, Focus On Services es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
+        <meta name="author" content=<?php echo $company_name ?>>
+        <meta name="keywords" content="Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, <?php echo $company_name ?> es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
               Transformación digital, Software on demand, Software a la medida, Servicios de desarrollo de software, fabrica de software, Progress, 4GL, ABL, app server, PAS, Servicios Web Síncronos,protocolos REST JSON XML">
         <meta name="description" content="La forma más rápida de adoptar la Transformación Digital">
         <!-- Favicon -->
@@ -195,10 +201,10 @@ if ($errorMSG == "") {
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <img src="asset/images/logo.png" width="15%"></img><br><a href="https://www.focusonservices.com/" target="_blank" class="text-primary">Power by Focus On Services</a>
+                            <img src="asset/images/logo.png" width="15%"></img><br><a href=<?php echo $url_company_site ?> target="_blank" class="text-primary">Power by <?php echo $company_name ?></a>
                         </div>
                         <div class="form-group col-sm-6"><br>
-                            <div class="fb-share-button" data-href="https://kambal.com.mx/capital_humano/ready-registration-form.php" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkambal.com.mx%2Flivedemo%2Fready-registration-form.php&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+                            <div class="fb-share-button" data-href="https://kambal.com.mx/capital_humano/ready-registration-form.php" data-layout="button_count" data-size="small"><a target="_blank" href=<?php echo $url_company_facebook ?> class="fb-xfbml-parse-ignore">Compartir</a></div>
                         </div>
                     </div>
                 </div>

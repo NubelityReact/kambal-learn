@@ -1,5 +1,11 @@
 <?php
 session_start();
+// LOAD URLs COMPANY
+// MSALVARADO 31 JUL 2024
+$company_name = $_ENV['COMPANY_NAME'];
+$url_company_site = $_ENV['URL_COMPANY_SITE'];
+$url_company_facebook = $_ENV['URL_COMPANY_FACEBOOK'];
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     ?> 
     <script> location.href = "menu.php";</script>
@@ -46,8 +52,8 @@ if ($errorMSG == "") {
         <title>Kambal</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta name="apple-mobile-Web-app-title" content="Kambal Learn®">
-        <meta name="author" content="Kambal Learn® | Focus On Services">
-        <meta name="keywords" content="CRM Escolar, LMS, Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, Focus On Services es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
+        <meta name="author" content=<?php echo $company_name ?>>
+        <meta name="keywords" content="CRM Escolar, LMS, Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, <?php echo $company_name ?> es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
               Transformación digital, Software on demand, Software a la medida, Servicios de desarrollo de software, fabrica de software, Progress, 4GL, ABL, app server, PAS, Servicios Web Síncronos,protocolos REST JSON XML">
         <meta name="description" content="La forma más rápida de adoptar la Transformación Digital">
         <!-- Favicon -->
@@ -157,7 +163,8 @@ if ($errorMSG == "") {
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">
-                            <img src="asset/images/logo.png" width="15%"></img><br><a href="https://www.focusonservices.com/" target="_blank" class="text-primary">Power by Focus On Services</a>
+                        <!-- <img src="asset/images/logo.png" width="15%"></img><br> -->
+                         <a href=<?php echo $url_company_site ?> target="_blank" class="text-primary">Power by <?php echo htmlspecialchars($company_name , ENT_QUOTES, 'UTF-8'); ?></a>
                         </div>
                     </div>
                 </div>

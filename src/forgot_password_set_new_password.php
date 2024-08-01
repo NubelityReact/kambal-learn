@@ -76,8 +76,8 @@ if ($errorMSG == "") {
         <title>Kambal</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta name="apple-mobile-Web-app-title" content="RockJS Framework®">
-        <meta name="author" content="RockJS Framework®|Focus On Services">
-        <meta name="keywords" content="Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, Focus On Services es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
+        <meta name="author" content=<?php echo $company_name ?>>
+        <meta name="keywords" content="Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, <?php echo $company_name ?> es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
               Transformación digital, Software on demand, Software a la medida, Servicios de desarrollo de software, fabrica de software, Progress, 4GL, ABL, app server, PAS, Servicios Web Síncronos,protocolos REST JSON XML">
         <meta name="description" content="La forma más rápida de adoptar la Transformación Digital">
 
@@ -185,7 +185,7 @@ if ($errorMSG == "") {
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">
-                            <img src="asset/images/logo.png" width="15%"></img><br><a href="https://www.focusonservices.com/" target="_blank" class="text-primary">Power by Focus On Services</a>
+                            <img src="asset/images/logo.png" width="15%"></img><br><a href=<?php echo $url_company_site ?> target="_blank" class="text-primary">Power by <?php echo $company_name ?></a>
                         </div>
                     </div>
                 </div>

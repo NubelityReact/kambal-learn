@@ -1,4 +1,10 @@
 <?php
+// LOAD URLs COMPANY
+// MSALVARADO 31 JUL 2024
+$company_name = $_ENV['COMPANY_NAME'];
+$url_company_site = $_ENV['URL_COMPANY_SITE'];
+$url_company_facebook = $_ENV['URL_COMPANY_FACEBOOK'];
+
 include_once './BackEndSAP/session.php';
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: SAMEORIGIN');
@@ -21,9 +27,9 @@ date_default_timezone_set($forcetimezone);
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="description" content="La forma más rápida de adoptar la Transformación Digital">
-        <meta name="keywords" content="Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, Focus On Services es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
+        <meta name="keywords" content="Soporte tecnico,it,ti,soluciones,datacenter,consultoria,centro de datos,empresarial,administracion,proyectos,soporte multimarca, <?php echo $company_name ?> es un proveedor global de servicios con presencia en más de 16 países de Latinoamérica con un amplio portafolio de servicios en Tecnologías de Información y con los mejores tiempos de respuesta de la industria, Software, Desarrollo, app, apps, android, IOS, 
               Transformación digital, Software on demand, Software a la medida, Servicios de desarrollo de software, fabrica de software, Progress, 4GL, ABL, app server, PAS, Servicios Web Síncronos,protocolos REST JSON XML, herramienta web para el control administrativo, alumnos y tutores, Campus Virtual. Plataforma de enseñanza virtual, generación de contenidos digitales ">
-        <meta name="author" content="Kambal Learn® | Focus On Services">
+        <meta name="author" content="<?php echo $company_name ?>">
         <!-- Favicon icon -->
         <link rel="icon" href="asset/images/favicon.ico" type="image/x-icon">
         <!-- Google font-->

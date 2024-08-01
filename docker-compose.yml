@@ -19,6 +19,9 @@ services:
       - DB_USER_MODEL=${DB_USER_MODEL}
       - DB_MODEL_PSW=${DB_MODEL_PSW}
       - DB_MODEL_NAME=${DB_MODEL_NAME}
+      - COMPANY_NAME=${COMPANY_NAME}
+      - URL_COMPANY_SITE=${URL_COMPANY_SITE}
+      - URL_COMPANY_FACEBOOK=${URL_COMPANY_FACEBOOK}
   db:
     build:
       context: .

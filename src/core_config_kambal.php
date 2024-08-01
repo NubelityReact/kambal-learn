@@ -79,6 +79,7 @@
                                 <h6 class="m-b-30"><input maxlength="50" type="text" class="form-control" id="clave_instituto" name="clave_instituto" required><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
+                        <!-- 
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-dart"></i>RFC para la emisión de facturas :</h6>
@@ -103,13 +104,13 @@
                                 <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="ClaveInterbancaria" name="ClaveInterbancaria"><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>  
-
+                        -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-home"></i>Calle</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Calle" name="Calle" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Calle" name="Calle" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -125,7 +126,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-home"></i>Localidad :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Localidad" name="Localidad" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Localidad" name="Localidad" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -133,7 +134,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-home"></i>Municipio :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Municipio" name="Municipio" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Municipio" name="Municipio" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -141,7 +142,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-comment"></i>País :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="country" name="country" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="country" name="country" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -149,7 +150,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-ui-home"></i>Ciudad :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="defaultcity" name="defaultcity" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="defaultcity" name="defaultcity" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                     </div>
@@ -167,7 +168,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-users-social"></i>Sitio Web :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="url" class="form-control" id="website" name="website" required=""><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="url" class="form-control" id="website" name="website" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -175,15 +176,16 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-email"></i>Email: Contacto principal</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Email" name="Email" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Email" name="Email" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
+                        <!-- 
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-users-social"></i>Tipo de persona :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="persona" name="persona" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="persona" name="persona" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -193,13 +195,14 @@
                             <div class="col-sm-12">
                                 <h6 class="m-b-30"><input type="text" class="form-control" id="NoCuenta" name="NoCuenta"><div class="help-block with-errors"></div></h6>
                             </div>
-                        </div>                      
+                        </div>    
+                        -->                  
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-numbered"></i>Número exterior :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input type="number" class="form-control" id="NoExterior" name="NoExterior" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input type="number" class="form-control" id="NoExterior" name="NoExterior" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -207,7 +210,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-home"></i>Colonia :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Colonia" name="Colonia" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Colonia" name="Colonia" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -223,7 +226,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-ui-home"></i>Estado :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="estado" name="estado" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="estado" name="estado" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -231,7 +234,7 @@
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-ui-home"></i>Código Postal :</h6>
                             </div>
                             <div class="col-sm-12">
-                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="cp" name="cp" required><div class="help-block with-errors"></div></h6>
+                                <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="cp" name="cp" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -240,7 +243,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <h6 class="m-b-30">
-                                    <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Telefono" name="Telefono" required><div class="help-block with-errors"></div></h6>
+                                    <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Telefono" name="Telefono" ><div class="help-block with-errors"></div></h6>
                                 </h6>
                             </div>
                         </div>
