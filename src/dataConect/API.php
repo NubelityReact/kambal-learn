@@ -6704,6 +6704,7 @@ class Kambal {
      * created by bennderodriguez
      */
     function addCarrera() {
+        $last_update = date('Y-m-d');
         $errorMSG = "";
         $query_files = '';
         //idicampus
@@ -6807,7 +6808,7 @@ class Kambal {
         if ($errorMSG == "") {
             if ($query_action == 'insert') {
                 include './conexion.php';
-                $sql = "INSERT INTO carrera (NivelId, idicampus, nombre, description, comments, working_day, salary, message, available, deadline, lms_course_id, idinotification) VALUES ('$NivelId', '$idicampus', '$nombre', '$description', '$comments', '$working_day', '$salary', '$message', '$available','$deadline', '$lms_course_id', '$idinotification')";
+                $sql = "INSERT INTO carrera (NivelId, idicampus, nombre, description, comments, working_day, salary, message, available, deadline, last_update, lms_course_id, idinotification) VALUES ('$NivelId', '$idicampus', '$nombre', '$description', '$comments', '$working_day', '$salary', '$message', '$available','$deadline', '$last_update','$lms_course_id', '$idinotification')";
                 if ($conn->query($sql) === TRUE) {
                     $last_id = $conn->insert_id;
                     $this->carrera_update_image($last_id);
@@ -6829,7 +6830,7 @@ class Kambal {
                 }
                 if ($errorMSG == '') {
                     include "./conexion.php";
-                    $sql = "UPDATE carrera SET nombre = '$nombre', description = '$description', comments = '$comments', working_day = '$working_day', salary = '$salary', message = '$message', available = '$available', deadline = '$deadline', last_update=now(), lms_course_id = '$lms_course_id', idinotification = '$idinotification' WHERE idicarrera = '$idicarrera'";
+                    $sql = "UPDATE carrera SET nombre = '$nombre', description = '$description', comments = '$comments', working_day = '$working_day', salary = '$salary', message = '$message', available = '$available', deadline = '$deadline', last_update='$last_update', lms_course_id = '$lms_course_id', idinotification = '$idinotification' WHERE idicarrera = '$idicarrera'";
                     if ($conn->query($sql) === TRUE) {
                         $this->carrera_update_image($idicarrera);
                         if ($query_files == '') {

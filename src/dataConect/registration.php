@@ -506,6 +506,7 @@ class registro {
     }
 
     function sendEmailForgot($idigenerales, $email, $fullname, $org) {
+        $url_company_kambal = $_ENV['URL_COMPANY_KAMBAL'];
         $deployment_folder = $this->getDeployment_folder();
         $errorMSG = "";
         if ($errorMSG == "") {
@@ -526,7 +527,7 @@ en Kambal Learn
 
 Para confirmar esta petición, y establecer una nueva contraseña para su
 cuenta, por favor vaya a la siguiente dirección de Internet:
-https://kambal.com.mx/$deployment_folder/forgot_password.php?org=$org&token=$tknmd5
+$url_company_kambal/$deployment_folder/forgot_password.php?org=$org&token=$tknmd5
 (Este enlace es válido durante  30 minutos desde el momento en que hizo la
 solicitud por primera vez .
 

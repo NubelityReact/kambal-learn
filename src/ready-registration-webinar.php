@@ -15,6 +15,7 @@
 $company_name = $_ENV['COMPANY_NAME'];
 $url_company_site = $_ENV['URL_COMPANY_SITE'];
 $url_company_facebook = $_ENV['URL_COMPANY_FACEBOOK'];
+$url_company_kambal = $_ENV['URL_COMPANY_KAMBAL'];
 
 $errorMSG = "";
 //idialumno
@@ -234,7 +235,7 @@ if ($errorMSG == "") {
                             <img src="asset/images/logo.png" width="15%"></img><br><a href=<?php echo $url_company_site ?> target="_blank" class="text-primary">Power by <?php echo $company_name ?></a>
                         </div>
                         <div class="form-group col-sm-6"><br>
-                            <div class="fb-share-button" data-href="https://kambal.com.mx/livedemo/ready-registration-form.php" data-layout="button_count" data-size="small"><a target="_blank" href=<?php echo $url_company_facebook ?> class="fb-xfbml-parse-ignore">Compartir</a></div>
+                            <div class="fb-share-button" data-href="<?php echo $url_company_kambal ?>/livedemo/ready-registration-form.php" data-layout="button_count" data-size="small"><a target="_blank" href=<?php echo $url_company_facebook ?> class="fb-xfbml-parse-ignore">Compartir</a></div>
                         </div>
                     </div>
                 </div>

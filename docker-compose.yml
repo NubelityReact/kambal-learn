@@ -22,6 +22,7 @@ services:
       - COMPANY_NAME=${COMPANY_NAME}
       - URL_COMPANY_SITE=${URL_COMPANY_SITE}
       - URL_COMPANY_FACEBOOK=${URL_COMPANY_FACEBOOK}
+      - URL_COMPANY_KAMBAL=${URL_COMPANY_KAMBAL}
   db:
     build:
       context: .
