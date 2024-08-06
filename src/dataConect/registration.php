@@ -247,9 +247,11 @@ class registro {
                     carrera.nivel,
                     carrera.categoria,
                     carrera.duracion,
-                    cNiveles.Descripcion as nivel
+                    cNiveles.Descripcion as nivel,
+                    campus.campus
                     FROM
                     carrera
+                    INNER JOIN campus ON carrera.idicampus = campus.idicampus
                     INNER JOIN cNiveles ON carrera.NivelId = cNiveles.NivelId
                     WHERE 
                     carrera.idicarrera = $idicarrera";

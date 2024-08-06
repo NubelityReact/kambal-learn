@@ -149,12 +149,13 @@
                 var txt = "";
                 console.log(date);
                 txt += '<div class="table-responsive"> <table id="tbxd09" class="table table-striped table-bordered table-hover table-sm dt-responsive nowrap">';
-                txt += '<thead class="table-primary text-light"> <tr><th>#</th><th>Ticket</th><th>Factura</th><th>Matrícula</th><th>Estatus</th><th>Subtotal</th><th>Descuento</th><th>Total</th><th>Personal que atendio</th><th>Fecha de cobro</th><th>Método de pago</th><th>Banco</th><th>ID de la transaccion</th><th>Últimos 4 digitos de la tarjeta</th><th>Titular</th><th>Comentarios</th><th>Facturado</th><th>Folio de factura</th>\n\
+                txt += '<thead class="table-primary text-light"> <tr><th>#</th><th>Ticket</th><th>Matrícula</th><th>Estatus</th><th>Subtotal</th><th>Descuento</th><th>Total</th><th>Personal que atendio</th><th>Fecha de cobro</th><th>Método de pago</th><th>Banco</th><th>ID de la transaccion</th><th>Últimos 4 digitos de la tarjeta</th><th>Titular</th><th>Comentarios</th>\n\
                 </tr> </thead>';
                 for (x in date) {
                     txt += '<tr>';
                     txt += "<td>" + date[x].idipago + "</td>";
                     txt += '<td> <a title="Imprimir ticket" class="btn btn-link btn-sm" target="_blank" href="ticket.php?folio=' + date[x].folio + '&matricula=' + date[x].matricula + '&idiventa=' + date[x].idiventa + '">' + date[x].folio + "</a></td>";
+                    /*
                     if (date[x].facturado == 'No') {
                         txt += "<td><button type='button' title='Facturar ticket' class='btn btn-sm btn-success facturar' ticket='" + date[x].folio + "' venta='" + date[x].idiventa + "' idiventa='" + date[x].idiventa + "' matricula='" + date[x].matricula + "' data-toggle='modal' data-target='#datosTimbrado' id='btnModalFactura'><i class='fas fa-bell'></i></button></td>";
                     } else if (date[x].facturado === '3') {
@@ -163,6 +164,7 @@
                         txt += "<td><button type='button' title='Descargar Factura' class='btn btn-sm btn-secondary docs' folio='" + date[x].folio_facturado + "' serie='' matricula='" + date[x].matricula + "' data-toggle='modal' data-target='#documento' id='btndownloadDocs'><i class='fas fa-download'></i></button>";
                         txt += "<button type='button' title='Cancelar Factura' class='btn btn-sm btn-danger cancel' folio='" + date[x].folio_facturado + "' serie='' idiventa='" + date[x].idiventa + "' id='cancelaFactura'><i class='fas fa-ban'></i></button></td>";
                     }
+                        */
                     txt += "<td>" + date[x].matricula + "</td>";
                     txt += "<td>" + date[x].estatus + "</td>";
                     txt += "<td>$" + date[x].subtotal + "</td>";
@@ -176,8 +178,10 @@
                     txt += "<td>" + date[x].digitos + "</td>";
                     txt += "<td>" + date[x].titular_tarjeta + "</td>";
                     txt += "<td>" + date[x].comentarios + "</td>";
+                    /*
                     txt += "<td>" + date[x].facturado + "</td>";
                     txt += "<td>" + date[x].folio_facturado + "</td>";
+                    */
                     txt += "</tr>";
                 }
                 txt += "</table> </div>"
