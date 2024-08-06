@@ -1034,7 +1034,9 @@ INSERT INTO `permiso` (`idipermiso`, `showInMenu`, `icon`, `icon_color`, `descri
 (79, 'No', 'pe pe-7s-pen', 'bg-c-green', 'Campos Personalizados', 'core_custom_form_inputs_get.php', 'Supported Form Controls\r\n', 'core_custom_form_inputs_create.php', 'Alumnos', '2021-01-08 10:00:33'),
 (80, 'No', 'pe pe-7s-pen', 'bg-c-green', 'Formularios ', 'core_custom_form_inputs_get.php', 'Cree un formulario personalizado', 'core_custom_form_create.php', 'Alumnos', '2021-01-08 11:38:56'),
 (81, 'Si', 'pe pe-7s-pen', 'bg-c-blue', 'Formularios', 'menu.php', 'Lista de Formularios', 'core_custom_form_inputs_get.php', 'Alumnos', '2021-01-08 12:51:21'),
-(82, 'No', 'pe pe-7s-pen', 'bg-c-pink', 'Custom Form', 'core_custom_form_inputs_get.php', ' Llene los campos que se solicitan', 'core_custom_form_preview.php', 'Alumnos', '2021-01-08 15:16:14');
+(82, 'No', 'pe pe-7s-pen', 'bg-c-pink', 'Custom Form', 'core_custom_form_inputs_get.php', ' Llene los campos que se solicitan', 'core_custom_form_preview.php', 'Alumnos', '2021-01-08 15:16:14'),
+(95, 'No', 'pe-7s-diamond pe', 'bg-c-lite-green', 'Nuevo Campus', 'core_campus_getCampus.php', 'Agregar nuevo Campus', 'core_campus_add.php', 'Planes de estudio', '2020-02-05 11:31:09'),
+(96, 'No', 'pe-7s-diamond pe', 'bg-c-pink', 'Actualizar Campus', 'core_campus_getCampus.php', 'Editar Campus', 'core_campus_updateCampus.php', 'Planes de estudio', '2020-02-05 11:31:09');
 
 
 
@@ -1205,7 +1207,9 @@ INSERT INTO `role_as_permiso` (`idirol_permiso`, `idirole`, `idipermiso`) VALUES
 (82,1,82),
 (83,1,83),
 (84, 2,42),
-(85, 2,35);
+(85, 2,35),
+(95, 1,95),
+(96, 1,96);
 
 
 
