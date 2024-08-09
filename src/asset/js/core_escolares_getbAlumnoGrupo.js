@@ -749,7 +749,7 @@ function comboAluas() {
 /*
  * Funcion que muestra el cataogo de horas dependiendo del turno (Matutino, sab, dominical etc)
  */
-function  getcHorasByTurnoID(TurnoId, NivelId, CarreraId) {
+function getcHorasByTurnoID(TurnoId, NivelId, CarreraId) {
     //$("#labelHorario").html('<div class="alert alert-info"><strong>Espere</strong> Cargando Contenido ... Esta acción puede tardar unos momentos <i class="pe-7s-config pe-spin pe-2x pe-va"></i></div>');
     $.ajax({
         type: "GET",
@@ -778,7 +778,7 @@ function getMaterias(idiCarrera, idigrado) {
     $.ajax({
         type: "GET",
         url: "dataConect/API.php",
-        data: "action=getMateriasByCarreraAndGradoID&idiCarrera=" + idiCarrera + "&idigrado=" + idigrado,
+        data: "action=getMateriasByCarreraAndGradoID&idicarrera=" + idiCarrera + "&GradosId=" + idigrado,
         success: function (text) {
             //console.log(text);
             var date = text.data;
@@ -863,9 +863,9 @@ $("#FormHorarioGrupo").validator().on("submit", function (event) {
 });
 
 function deleteHorarioGrupo(HorarioGrupoId, dia) {
-//        var txt;
-//        var r = confirm("Desea borrar este horario? ");
-//        if (r) {
+    //        var txt;
+    //        var r = confirm("Desea borrar este horario? ");
+    //        if (r) {
     $.ajax({
         type: "POST",
         url: "dataConect/API.php",
@@ -878,9 +878,9 @@ function deleteHorarioGrupo(HorarioGrupoId, dia) {
             }
         }
     });
-//        } else {
-//            txt = "You pressed Cancel!";
-//        }
+    //        } else {
+    //            txt = "You pressed Cancel!";
+    //        }
 }
 
 function limpiarFila(HorarioGrupoId) {

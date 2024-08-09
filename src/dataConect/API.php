@@ -7106,12 +7106,12 @@ class Kambal {
         if (empty($_GET["idicarrera"])) {
             $errorMSG = "idicarrera is required ";
         } else {
-            $idicarrera = $_GET["idiCarrera"];
+            $idicarrera = $_GET["idicarrera"];
         }
         if (empty($_GET["GradosId"])) {
             $errorMSG .= "GradosId is required ";
         } else {
-            $GradosId = $_GET["idigrado"];
+            $GradosId = $_GET["GradosId"];
         }
         // redirect to success page
         if ($errorMSG == "") {
