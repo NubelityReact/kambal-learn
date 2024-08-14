@@ -91,6 +91,7 @@
 <?php include './footer.php'; ?>
 <script>
     $(document).ready(function () {
+        getPayPalButtonServices();
         getReferenced_payment();
         get_config_kambal();
         $("#print-window").click(function () {
@@ -99,7 +100,7 @@
         $("#close-window").click(function () {
             window.close();   // Closes the new window
         });
-        getPayPalButtonServices();
+        
     });
     function get_config_kambal() {
         $.ajax({
@@ -128,14 +129,14 @@
 
     function getPayPalButtonServices() {
         var idiventa_as_servicio = "<?php echo $_GET['idiventa_as_servicio']; ?>";
+        var idiservicio = "<?php echo $_GET['idiservicio']; ?>";
         $.ajax({
             type: "GET",
             url: "dataConect/pagos.php",
-            data: "action=getPayPalButtonServices&idiventa_as_servicio=" + idiventa_as_servicio,
+            data: "action=getPayPalButtonServices&idiservicio=" + idiservicio,
             success: function (text) {
                 var paypal = text.data[0];//paypal_button
-                $('#PayPalBtn').html('<h4>También puedes pagar con PayPal</h4> <label>Solo escribe tu </label>' + paypal.paypal_button);
-                $("input:text").val(idiventa_as_servicio);
+                $('#PayPalBtn').html('<h4>También puedes pagar con PayPal</h4> <label>Solo escribe tu </label>' + paypal.button);
                 $("input:text").attr('readonly', true);
             }
         });
@@ -172,7 +173,7 @@
                 $('#fecha_limite').html(json.fecha_limite);
                 $('#code_bar_matricula').html('<img src="codebar/codebar_img_tag.php?text=' + json.matricula + '" alt="Matricula escolar" class="m-b-10"><br>');
                 $('#code_vas').html('<img src="codebar/codebar_img_tag.php?text=' + json.idiventa_as_servicio + '" alt="Codigo del servicio" class="m-b-10">');
-                $("input:text").val(json.idiventa_as_servicio);
+                $("input:text").val(json.matricula);
                 //$("input:text").val("Glenn Quagmire");
             }
         });

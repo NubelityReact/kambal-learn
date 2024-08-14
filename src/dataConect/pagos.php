@@ -554,29 +554,26 @@ class pagos {
 
     function getPayPalButtonServices() {
         $errorMSG = "";
-        //idiventa_as_servicio
-        if (empty($_GET["idiventa_as_servicio"])) {
-            $errorMSG = "idiventa_as_servicio is required ";
+        //idiservicio
+        if (empty($_GET["idiservicio"])) {
+            $errorMSG = "idiservicio is required ";
         } else {
-            $idiventa_as_servicio = $_GET["idiventa_as_servicio"];
+            $idiservicio = $_GET["idiservicio"];
         }
         // redirect to success page
         if ($errorMSG == "") {
             header('Content-Type: application/json');
             include './conexion.php';
             $sql = "SELECT
-                    venta_as_servicio.idiventa_as_servicio,
-                    servicios.idiservicio,
-                    tbservicios_paypal.idservicios_paypal,
-                    tb_paypal_buttons.idipaypal,
-                    tb_paypal_buttons.descripcion,
-                    tb_paypal_buttons.paypal_button
+                    tbButtonPyament.idibutton,
+                    tbButtonPyament.description,
+                    tbButtonPyament.button,
+                    tbButtonPyament.idiservicio
                     FROM
-                    venta_as_servicio
-                    INNER JOIN servicios ON venta_as_servicio.idiservicio = servicios.idiservicio
-                    INNER JOIN tbservicios_paypal ON tbservicios_paypal.idiservicio = servicios.idiservicio
-                    INNER JOIN tb_paypal_buttons ON tbservicios_paypal.idipaypal = tb_paypal_buttons.idipaypal
-                    WHERE venta_as_servicio.idiventa_as_servicio = $idiventa_as_servicio";
+                    tbButtonPyament
+                    INNER JOIN servicios ON tbButtonPyament.idiservicio = servicios.idiservicio
+                    WHERE tbButtonPyament.idiservicio = $idiservicio 
+                    LIMIT 1";
             $result = $conn->query($sql);
             $rows = array();
             if ($result->num_rows > 0) {
