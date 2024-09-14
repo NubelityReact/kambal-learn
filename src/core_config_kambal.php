@@ -96,6 +96,7 @@
                                 <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="banco" name="banco"><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
+                        -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-plus"></i>Clave Interbancaria :</h6>
@@ -103,8 +104,18 @@
                             <div class="col-sm-12">
                                 <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="ClaveInterbancaria" name="ClaveInterbancaria"><div class="help-block with-errors"></div></h6>
                             </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h6 class="f-w-400 m-b-30"><i class="icofont icofont-clip"></i>Teléfono :</h6>
+                            </div>
+                            <div class="col-sm-12">
+                                <h6 class="m-b-30">
+                                    <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Telefono" name="Telefono" ><div class="help-block with-errors"></div></h6>
+                                </h6>
+                            </div>
                         </div>  
-                        -->
+                        <!-- 
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-home"></i>Calle</h6>
@@ -120,7 +131,9 @@
                             <div class="col-sm-12">
                                 <h6 class="m-b-30"><input maxlength="150" type="number" class="form-control" id="NoInterior" name="NoInterior"><div class="help-block with-errors"></div></h6>
                             </div>
-                        </div>
+                        </div> 
+                        -->
+                        <!-- 
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-home"></i>Localidad :</h6>
@@ -152,7 +165,8 @@
                             <div class="col-sm-12">
                                 <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="defaultcity" name="defaultcity" ><div class="help-block with-errors"></div></h6>
                             </div>
-                        </div>
+                        </div> 
+                        -->
                     </div>
                     <div class="col-sm-4 user-detail">                         
                         <div class="row">
@@ -188,6 +202,7 @@
                                 <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="persona" name="persona" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
+                        -->   
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-tasks"></i>Número de Cuenta :</h6>
@@ -196,8 +211,7 @@
                                 <h6 class="m-b-30"><input type="text" class="form-control" id="NoCuenta" name="NoCuenta"><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>    
-                        -->                  
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-numbered"></i>Número exterior :</h6>
                             </div>
@@ -237,16 +251,7 @@
                                 <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="cp" name="cp" ><div class="help-block with-errors"></div></h6>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h6 class="f-w-400 m-b-30"><i class="icofont icofont-clip"></i>Teléfono :</h6>
-                            </div>
-                            <div class="col-sm-12">
-                                <h6 class="m-b-30">
-                                    <h6 class="m-b-30"><input maxlength="150" type="text" class="form-control" id="Telefono" name="Telefono" ><div class="help-block with-errors"></div></h6>
-                                </h6>
-                            </div>
-                        </div>
+                        -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <h6 class="f-w-400 m-b-30"><i class="icofont icofont-web"></i>URL LMS :</h6>
@@ -280,29 +285,31 @@
 <div class="modal" id="modalLogo">
     <div class="modal-dialog">
         <div class="modal-content">
-
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Seleccione una imagen</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-
             <!-- Modal body -->
             <div class="modal-body">
                 <link href="asset/css/style.css" rel="stylesheet" />
                 <form id="upload" method="post" action="core_config_kambal_uploadimage.php" enctype="multipart/form-data">
+                    <input type="hidden" name="idiconfig" value="1">
+                    <div class="text-light">
+                        <label><i class="far fa-file-image pe-2x text-danger"></i>  El archivo debe tener un formato JPG, PNG, JPEG, GIF </label><br>
+                        <label><i class="pe-7s-info pe-2x text-danger"></i> Seleccione únicamente un archivo</label><br>
+                        <label><i class="pe-7s-info pe-2x text-warning"></i> El archivo deben tener un tamaño máximo de 1Mb</label><br>
+                        <label><i class="pe-7s-info pe-2x text-info"></i> El archivo deben tener dimenciones de 240 x 240</label>
+                        <div class="help-block with-errors text-danger"></div>
+                    </div>
                     <div id="drop">
                         Arrastre aquí
                         <a>Buscar en el equipo</a>
-                        <input type="file" name="upl"  id="upl"/>
-                        <ul>
-                            <!-- The file uploads will be shown here -->
-                        </ul>
+                        <input type="file" name="upl"  id="upl" accept="image/*"/>
+                        <ul></ul>
                     </div>
-
                 </form>
             </div>
-
         </div>
     </div>
 </div>
@@ -317,5 +324,5 @@
 <script src="asset/js/jquery.fileupload.js"></script>
 <!-- Our main JS file -->
 <script src="asset/js/script.js"></script>
-<script src="asset/js/core_config_kambal.js"></script>
+<script src="asset/js/core_config_kambal.js?v=2"></script>
 

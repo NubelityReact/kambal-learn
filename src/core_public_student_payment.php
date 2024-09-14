@@ -32,7 +32,7 @@
                 txt += '<thead class="table-primary text-light"> <tr><th>Código</th><th>Estatus</th><th>Descripción del servicio</th><th>Fecha limite para el pago</th><th>Costo del servicio</th><th>Recargos</th><th>Total a pagar</th><th>Periodo</th>\n\
                 <th>Fecha cobro</th></tr> </thead>';
                 for (x in date) {
-                    var payment = '<a href="core_referenced_payment.php?idialumno=' + idialumno + '&idiventa_as_servicio=' + date[x].idiventa_as_servicio + '" target="_blank"><button type="button" id="payment" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Imprimir Ficha de deposito"><i class="pe-7s-piggy pe-va"></i></button></a>';
+                    var payment = '<a href="core_referenced_payment.php?idiservicio=' + date[x].idiservicio + '&idialumno=' + idialumno + '&idiventa_as_servicio=' + date[x].idiventa_as_servicio + '" target="_blank"><button type="button" id="payment" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Imprimir Ficha de deposito"><i class="pe-7s-piggy pe-va"></i></button></a>';
                     txt += '<tr>';
                     txt += "<td>" + date[x].idiventa_as_servicio + "</td>";
                     if (date[x].estatus == "Pendiente") {

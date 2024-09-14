@@ -168,6 +168,7 @@
             url: "dataConect/API.php",
             data: "action=getcardAlumnoMatricula&matricula=" + matricula,
             success: function (text) {
+                console.log({text})
                 var date = text.data;
                 var idialumno = text.data[0].idialumno;
                 var txt = "";
@@ -175,7 +176,7 @@
                 txt += '<div class="card card-border-warning"><div class="d-flex"><div class="p-2 mr-auto"><div class="page-header-title"><i class="pe-7s-user bg-c-pink"></i><div class="d-inline">';
                 for (x in date) {
                     txt += '<h4 id="cabecera"><input type="hidden" id="idialumno" value = "' + date[x].idialumno + '">' + date[x].nombre + ' ' + date[x].apellido_paterno + ' ' + date[x].apellido_materno + '</h4>\n\
-                    <span id="subcabecera"><strong>Carrera: </strong>' + date[x].carrera + ' <strong>Matrícula:</strong> ' + date[x].matricula + ' <strong>Turno:</strong> ' + date[x].turno + '<strong> Estatus: </strong>' + date[x].estatus + ' <strong>GDO: </strong>' + date[x].cuatrimestre + '</span> <span class="badge badge-success text-light">Beca: %' + date[x].beca_colegiatura + '</span><br>';
+                    <span id="subcabecera"><strong>Carrera: </strong>' + date[x].carrera + ' <strong>Matrícula:</strong> ' + date[x].matricula + ' <strong>Turno:</strong> ' + date[x].cTurno + '<strong> Estatus: </strong>' + date[x].estatus + ' <strong>GDO: </strong>' + date[x].cuatrimestre + '</span> <span class="badge badge-success text-light">Beca: %' + date[x].beca_colegiatura + '</span><br>';
                 }
                 txt += '</div></div></div></div></div>';
                 document.getElementById("loadTableServicios").innerHTML = txt;
@@ -241,7 +242,7 @@
                     } else {
                         pagar = total;
                     }
-                    txt += "<td>" + date[x].comentario + "</td>";
+                    txt += "<td>" + date[x].descripcion + "</td>";
                     txt += "<td>" + date[x].fecha_limite + "</td>";
                     txt += "<td>$ " + date[x].precio + "</td>";
                     txt += "<td>%" + date[x].recargo + "</td>";

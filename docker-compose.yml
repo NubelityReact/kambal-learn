@@ -1,12 +1,12 @@
 services:
   web:
-    build: 
+    build:
       context: .
       dockerfile: ./docker/Dockerfile.php
       args:
-      - SMTP_EMAIL=${SMTP_EMAIL}
-      - SMTP_PASSWORD=${SMTP_PASSWORD}
-      - SMTP_SERVER=${SMTP_SERVER}
+        - SMTP_EMAIL=${SMTP_EMAIL}
+        - SMTP_PASSWORD=${SMTP_PASSWORD}
+        - SMTP_SERVER=${SMTP_SERVER}
     container_name: php_web_learn
     ports:
       - "127.0.0.1:8080:80"
@@ -23,6 +23,9 @@ services:
       - URL_COMPANY_SITE=${URL_COMPANY_SITE}
       - URL_COMPANY_FACEBOOK=${URL_COMPANY_FACEBOOK}
       - URL_COMPANY_KAMBAL=${URL_COMPANY_KAMBAL}
+    command: >
+      /bin/sh -c "chown -R www-data:www-data /var/www/html/control-escolar &&
+                  apache2-foreground"
   db:
     build:
       context: .
@@ -35,9 +38,9 @@ services:
       MYSQL_USER: ${DB_USER_MODEL}
       MYSQL_PASSWORD: ${DB_MODEL_PSW}
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data_learn:/var/lib/mysql
     ports:
       - "3306:3306"
 
 volumes:
-  db_data:
+  db_data_learn:

@@ -3445,7 +3445,7 @@ class Kambal {
                     include "./conexion.php";
                     $sql = "UPDATE datos_generales SET nombre = '$nombre', apellido_paterno = '$apellido_paterno', apellido_materno = '$apellido_materno', estado_civil = '$estado_civil', genero = '$genero', edad = '$edad', curp = '$curp', rfc = '$rfc', nss = '$nss', email = '$email', telefono = '$telefono', movil = '$movil', email2 = '$email2', pais = '$pais', ciudad = '$ciudad', direccion = '$direccion', municipio = '$municipio', cp = '$cp', escegreso = '$escegreso', nivelegreso = '$nivelegreso', entidad_fed = '$entidad_fed', fecha_inicio = '$fecha_inicio', fechaegreso = '$fechaegreso', infoadicional = '$infoadicional', tiposangre = '$tiposangre', alergias = '$alergias', fecha_nacimiento = '$fecha_nacimiento', emergencias = '$emergencias' WHERE idigenerales = '$idigenerales';";
                     if ($conn->query($sql) === TRUE) {
-                        echo 'success';
+                        echo 'Registro actualizado';
                     } else {
                         echo "Error: " . $conn->error;
                     }
@@ -8163,13 +8163,15 @@ class Kambal {
                     cGrados.Descripcion AS grado,
                     cliclo.ciclo,
                     cTurno.Descripcion AS turno,
-                    carrera.NivelId
+                    carrera.NivelId,
+                    cNiveles.Descripcion AS nivel
                     FROM
                     tbGrupos
                     INNER JOIN carrera ON tbGrupos.idicarrera = carrera.idicarrera
                     INNER JOIN cGrados ON tbGrupos.GradosId = cGrados.GradosId
                     INNER JOIN cliclo ON tbGrupos.idiciclo = cliclo.idiciclo
                     INNER JOIN cTurno ON tbGrupos.TurnoId = cTurno.TurnoId
+                    INNER JOIN cNiveles ON carrera.NivelId = cNiveles.NivelId
                     WHERE
                     tbGrupos.GrupoId = $GrupoId";
             $result = $conn->query($sql);

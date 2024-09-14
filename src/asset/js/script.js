@@ -18,21 +18,23 @@ $(function () {
         // either via the browse button, or via drag/drop:
         add: function (e, data) {
             //swalert(data.files[0].name)
+            console.log({ data })
             var idiconfig = $('#idiconfig').val();
             $.ajax({
                 type: "POST",
                 url: "dataConect/pagos.php",
                 data: "action=config_kambal_updatelogo&frontpageimage=" + data.files[0].name + "&idiconfig=" + idiconfig,
                 success: function (text) {
+                    console.log({ img: text })
                     $("#modalLogo .close").click()
                 }
             });
             var tpl = $('<li class="working"><input type="text" value="0" data-width="48" data-height="48"' +
-                    ' data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" /><p></p><span></span></li>');
+                ' data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" /><p></p><span></span></li>');
 
             // Append the file name and file size
             tpl.find('p').text(data.files[0].name)
-                    .append('<i>' + formatFileSize(data.files[0].size) + '</i>');
+                .append('<i>' + formatFileSize(data.files[0].size) + '</i>');
 
             // Add the HTML to the UL element
             data.context = tpl.appendTo(ul);
@@ -58,8 +60,6 @@ $(function () {
         },
 
         progress: function (e, data) {
-            console.log(data);
-
             // Calculate the completion percentage of the upload
             var progress = parseInt(data.loaded / data.total * 100, 10);
 

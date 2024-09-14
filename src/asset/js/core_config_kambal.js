@@ -43,6 +43,7 @@ function submitMSG(valid, msg) {
 $(document).ready(function () {
     //$("#changeLogo").attr("disabled", true);
     get_config_kambal();
+    getLogo();
 });
 
 //$('#file').on("change", function () {
@@ -80,16 +81,16 @@ function get_config_kambal() {
         url: "dataConect/pagos.php",
         data: "action=get_config_kambal",
         success: function (text) {
-            //console.log(text);
             var date = text.data[0];
+            console.log({ text })
             //console.log(date);
             $("#idiconfig").val(date.idiconfig);
             $("#idifactura").val(date.idifactura);
             $("#fullname").val(date.fullname);
             $("#shortname").val(date.shortname);
             $("#summary").val(date.summary);
-            var image = "asset/images/logo/" + date.frontpageimage;
-            $("#preview").append('<img src="' + image + '" alt="Smiley face" height="50px">');
+            //var image = "asset/images/logo/" + date.frontpageimage;
+            //$("#preview").append('<img src="' + image + '" alt="Smiley face" height="50px">');
             $("#country").val(date.country);
             $("#defaultcity").val(date.defaultcity);
             $("#rfc").val(date.rfc);
@@ -122,6 +123,22 @@ function get_config_kambal() {
     });
 }
 
+function getLogo() {
+    $("#imageUser").html('<div class="alert alert-info"><strong>Espere</strong> Cargando Contenido ... Esta acción puede tardar unos momentos <i class="pe-7s-config pe-spin pe-2x pe-va"></i></div>');
+    $.ajax({
+        type: "GET",
+        url: "dataConect/registration.php",
+        data: "action=getlogokambal",
+        success: function (text) {
+            console.log({ img: text })
+            $("#preview").html(text);
+        },
+        error: function (err) {
+            console.log({ err })
+        }
+    });
+}
+
 document.getElementById("upl").onchange = function (e) {
     // Creamos el objeto de la clase FileReader
     let reader = new FileReader();
@@ -130,7 +147,8 @@ document.getElementById("upl").onchange = function (e) {
     // Le decimos que cuando este listo ejecute el código interno
     reader.onload = function () {
         let preview = document.getElementById('preview'),
-                image = document.createElement('img');
+            image = document.createElement('img');
+        console.log({ preview, image })
         image.src = reader.result;
         preview.innerHTML = '';
         preview.append(image);

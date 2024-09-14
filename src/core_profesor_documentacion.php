@@ -100,7 +100,7 @@
                 txt += '<select class="form-control" id="DocumentoId" name="DocumentoId" required>';
                 txt += '<option value="">Seleccione uno</option>';
                 for (x in date) {
-                    txt += '<option value="' + date[x].DocumentoId + '">' + date[x].Descripcion + '</option>';
+                    txt += '<option value="' + date[x].ididocumento + '">' + date[x].description + '</option>';
                 }
                 txt += "</select>";
                 document.getElementById("getcDocumentos").innerHTML = txt;

@@ -228,14 +228,14 @@
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <h6 class="text-uppercase text-primary">Atendido por: <?php echo $globalNombre ?></h6>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="certificado">Requiere Factura? No / Sí</label><br>
                                     <label class="switch float-right">
                                         <input type="checkbox" name="factura" id="factura" value="si">
                                         <span class="slider round"></span>
                                     </label>
                                     <div class="help-block with-errors"></div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="row">
@@ -363,7 +363,7 @@
             success: function (text) {
                 var date = text.data;
                 var txt = "";
-                //console.log(date);
+                console.log(text);
                 txt += '<div class="table-responsive"> <table id="tableServicios" class="table table-striped table-bordered table-hover table-sm dt-responsive nowrap">';
                 txt += '<thead class="table-primary text-light"> <tr><th>Código</th><th>Servicio</th><th>Precio</th><th>Detalles</th><th>Estatus</th><th>Fecha Vencimiento</th><th>Servicio</th></tr> </thead>';
                 for (x in date) {

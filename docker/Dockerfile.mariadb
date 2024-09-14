@@ -1,6 +1,6 @@
 FROM mariadb:10.6
 
-COPY ./db/init-clean_db.sql /docker-entrypoint-initdb.d/
+COPY ./db/kambal_ovmx_qa.sql /docker-entrypoint-initdb.d/
 
 RUN sed -i 's/^bind-address\s*=.*$/bind-address=0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf
 

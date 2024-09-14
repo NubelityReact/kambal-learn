@@ -1,3 +1,5 @@
+const Webcam = require("./webcam.min");
+
 Webcam.set({
     width: 300,
     height: 300,
@@ -12,4 +14,5 @@ function take_snapshot() {
         $(".image-tag").val(data_uri);
         document.getElementById('results').innerHTML = '<img width="300" height="300" src="' + data_uri + '"/>';
     });
+
 }

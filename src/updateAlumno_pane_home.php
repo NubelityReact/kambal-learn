@@ -10,7 +10,7 @@
                         <div id="imageUser"></div><br>
                         <div id="imageSign"></div>
                         <div class="contact-icon">
-                            <button class="btn btn-default" data-placement="bottom" title="Cambiar foto de perfil" data-toggle="modal" data-target="#modalCamera"><i class="pe-7s-camera m-0"></i></button>
+                            <button id="btnOpenCamera" class="btn btn-default" data-placement="bottom" title="Cambiar foto de perfil" data-toggle="modal" data-target="#modalCamera"><i class="pe-7s-camera m-0"></i></button>
                             <button class="btn btn-default" data-placement="bottom" title="Cambiar firma" data-toggle="modal" data-target="#signature"><i class="pe-7s-pen m-0"></i></button>
                             <a href="credencialEstudiante.php?idialumno=<?php echo $_GET['idialumno'] ?>&idiarchivo=<?php echo $_GET['idiarchivo'] ?>" target="_blank"><button class="btn btn-default" data-placement="bottom" title="Imprimir Credencial" id="printTar"><i class="pe-7s-print m-0"></i></button></a>
                         </div>
@@ -291,6 +291,8 @@
 <script src="asset/js/addalumno_webcam.js"></script>
 <script src="asset/js/validator.min.js"></script>
 <script>
+
+
                                     $("#take").click(function () {
                                         // var idiarchivo = <?php //echo $_GET['idiarchivo'];    ?>;
                                         // $("#idiarchivo").val(idiarchivo);

@@ -18,7 +18,6 @@ function submitForm() {
         url: "dataConect/API.php",
         data: "action=addGrupoEscolar&" + dataString,
         success: function (text) {
-            console.log(text);
             var success = text.data[0].success;
             var GrupoId = text.data[0].GrupoId;
             if (success == 1) {

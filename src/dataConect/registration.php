@@ -41,6 +41,13 @@ class registro {
                 if ($action == 'get_notifications_id') {
                     $this->get_notifications_id();
                 }
+                if ($action == 'getlogokambal') {
+                    $this->getlogokambal();
+                }
+                if ($action == 'get_config_kambal') {
+                    $this->get_config_kambal();
+                }
+
                 break;
             case 'POST'://inserta
                 $action = $_POST['action'];
@@ -524,20 +531,20 @@ class registro {
             $subject = 'Solicitud de restablecimiento de contraseña!';
             $html_content = "Hola $fullname.
 
-Usted solicitó un restablecimiento de contraseña para su cuenta '$email'
-en Kambal Learn
+            Usted solicitó un restablecimiento de contraseña para su cuenta '$email'
+            en Kambal Learn
 
-Para confirmar esta petición, y establecer una nueva contraseña para su
-cuenta, por favor vaya a la siguiente dirección de Internet:
-$url_company_kambal/$deployment_folder/forgot_password.php?org=$org&token=$tknmd5
-(Este enlace es válido durante  30 minutos desde el momento en que hizo la
-solicitud por primera vez .
+            Para confirmar esta petición, y establecer una nueva contraseña para su
+            cuenta, por favor vaya a la siguiente dirección de Internet:
+            $url_company_kambal/$deployment_folder/forgot_password.php?org=$org&token=$tknmd5
+            (Este enlace es válido durante  30 minutos desde el momento en que hizo la
+            solicitud por primera vez .
 
-Si usted no ha solicitado este restablecimiento de contraseña, no necesita
-realizar ninguna acción.
+            Si usted no ha solicitado este restablecimiento de contraseña, no necesita
+            realizar ninguna acción.
 
-Si necesita ayuda, por favor póngase en contacto con el administrador del
-sitio.";
+            Si necesita ayuda, por favor póngase en contacto con el administrador del
+            sitio.";
 
             include_once './api_encrypt_password.php';
             $objs = new api_encrypt_password();
@@ -1204,7 +1211,7 @@ sitio.";
 
     function getCampus() {
         $errorMSG = "";
-// redirect to success page
+        // redirect to success page
         if ($errorMSG == "") {
             header('Content-Type: application/json');
             include './conexion.php';
@@ -1212,7 +1219,7 @@ sitio.";
             $result = $conn->query($sql);
             $rows = array();
             if ($result->num_rows > 0) {
-// output data of each row
+        // output data of each row
                 while ($row = $result->fetch_assoc()) {
                     $rows['data'][] = $row;
                 }
@@ -1383,6 +1390,67 @@ sitio.";
                 echo $errorMSG;
             }
         }
+    }
+
+    function getlogokambal() {
+        $errorMSG = '';
+        $bad_image = '<img src="asset/images/logo/nubelity_isograph.jpeg" class="img-fluid p-b-10">';
+        if ($errorMSG == '') {
+            include './touploadfile.php';
+            $sql = "SELECT file_name FROM tbconfig WHERE idiconfig = 1";
+            $result = $conn->query($sql);
+            $rows = array();
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    $file = $row["file"];
+                    $file_name = $row["file_name"];
+                }
+                if (strlen($file_name) > 1) {
+                    echo '<img class="img-fluid p-b-10 img-logo" width="60%" src="asset/images/logo/' . $file_name . '"/>';
+                } else {
+                    echo $bad_image;
+                }
+            } else {
+                echo $bad_image;
+            }
+            $conn->close();
+        } else {
+            echo $bad_image;
+        }
+    }
+
+    function get_config_kambal() {
+        header('Content-Type: application/json');
+        include './conexion.php';
+        $sql = "SELECT
+                tbconfig.idiconfig,
+                tbconfig.deleted,
+                tbconfig.suspended,
+                tbconfig.deployment_folder,
+                tbconfig.fullname,
+                tbconfig.shortname,
+                tbconfig.summary,
+                tbconfig.website,
+                tbconfig.logo_back_ground,
+                tbconfig.product_version,
+                tbconfig.org
+                FROM
+                tbconfig
+                WHERE
+                tbconfig.idiconfig = 1";
+        $result = $conn->query($sql);
+        $rows = array();
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                $rows['data'][] = $row;
+            }
+            print json_encode($rows, JSON_PRETTY_PRINT);
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
     }
 
 }

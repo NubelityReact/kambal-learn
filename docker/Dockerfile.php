@@ -39,6 +39,6 @@ WORKDIR /var/www/html/control-escolar
 
 COPY ./src .
 
-RUN chown -R www-data:www-data /var/www/html
+# RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80

@@ -471,16 +471,16 @@
     });
 
     function submitForm() {
-        var dataString = $('#datosGenerales').serialize();
+        var dataString = $('#datosGenerales').serialize()+'&query_action=update';
         swalert('Mensaje', "Procesando", 'info');
         $.ajax({
             type: "POST",
             url: "dataConect/API.php",
             data: "action=putGenerales&" + dataString,
             success: function (text) {
-                console.log(text);
+                console.log({text});
                 if (text == "Registro actualizado") {
-                    swalert('!Exito¡', 'Registro Actualizado correctamente', 'success');
+                    swalert('¡Exito!', 'Registro Actualizado correctamente', 'success');
                     formSuccess();
                 } else {
                     var KeyDuplicate = text.includes("Duplicate entry");

@@ -404,16 +404,21 @@
                     var canvas_img_data = canvas.toDataURL('image/png');
                     var img_data = canvas_img_data.replace(/^data:image\/(png|jpg);base64,/, "");
                     //ajax call to save image inside folder
+                    console.log("making ajax request")
                     $.ajax({
                         url: 'sign/save_sign.php',
                         data: {img_data: img_data},
                         type: 'post',
                         dataType: 'json',
                         success: function (response) {
+                            console.log("Saving sign")
                             var sign = response.file_name;
                             //console.log(idialumno);
                             //updateSignByIdiAlumno
                             updateSignByIdiAlumno(sign, idialumno);
+                        },
+                        error: function(err) {
+                            console.log({err})
                         }
                     });
                 }

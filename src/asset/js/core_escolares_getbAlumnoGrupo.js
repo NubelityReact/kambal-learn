@@ -80,6 +80,7 @@ function getDetailGroupById(GrupoId) {
         url: "dataConect/API.php",
         data: "action=getDetailGroupById&GrupoId=" + GrupoId,
         success: function (text) {
+            console.log({ text })
             var NivelId = text.data[0].NivelId;
             var CarreraId = text.data[0].CarreraId;
             var nivel = text.data[0].nivel;
@@ -107,6 +108,10 @@ function getDetailGroupById(GrupoId) {
             getcHorasByTurnoID(TurnoId, NivelId, CarreraId);
             getMaterias(idicarrera, GradosId);
             getPeriodoByGrupoId();
+        },
+        error: function (data) {
+            console.log({ data })
+            data.json().then(console.log)
         }
     });
 }
@@ -250,7 +255,6 @@ $("#editGroup").validator().on("submit", function (event) {
             url: "dataConect/API.php",
             data: "action=updateGrupoEscolar&" + dataString,
             success: function (text) {
-                console.log(text);
                 var request = String(text);
                 var str = request;
                 var n = str.includes("success");
@@ -300,7 +304,6 @@ function cliclo() {
         url: "dataConect/API.php",
         data: "action=getCiclo",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="ciclo" name="ciclo" required>';
@@ -321,7 +324,6 @@ function getCiclo() {
         url: "dataConect/API.php",
         data: "action=getCiclo",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="CicloId" name="CicloId" required>';
@@ -341,7 +343,6 @@ function getNiveles() {
         url: "dataConect/API.php",
         data: "action=getNivel",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="idinivel" name="idinivel" onchange="getcCarrerasbyID()" required>';
@@ -363,7 +364,6 @@ function getcCarrerasbyID() {
         url: "dataConect/API.php",
         data: "action=getcCarrerasbyID&NivelId=" + NivelId,
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="CarreraId" name="CarreraId" required onchange="getcGradosById()">';
@@ -385,7 +385,6 @@ function getcGradosById() {
         url: "dataConect/API.php",
         data: "action=getGradosByidicarrera&idicarrera=" + idicarrera,
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="GradosId" name="GradosId" required>';
@@ -406,7 +405,6 @@ function getcAulas() {
         url: "dataConect/API.php",
         data: "action=getcAulas",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="AulaId" name="AulaId" required>';
@@ -427,7 +425,6 @@ function seleTurno() {
         url: "dataConect/API.php",
         data: "action=getTurno",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="TurnoId" name="TurnoId">';
@@ -448,7 +445,6 @@ function divTurno() {
         url: "dataConect/API.php",
         data: "action=getTurno",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="myturno" name="myturno">';
@@ -469,7 +465,6 @@ function nivel() {
         url: "dataConect/API.php",
         data: "action=getNivel",
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="nivel" name="nivel" onchange="FindCarrerasbyID()" required>';
@@ -490,7 +485,6 @@ function FindCarrerasbyID() {
         url: "dataConect/API.php",
         data: "action=getcCarrerasbyID&NivelId=" + NivelId,
         success: function (text) {
-            console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<select class="form-control fill" id="carrera" name="carrera" required >';
@@ -515,7 +509,6 @@ function getcTipoEvaluacionPeriodo() {
         url: "dataConect/API.php",
         data: "action=getcTipoEvaluacionPeriodo",
         success: function (text) {
-            //console.log(text);
             var date = text.data;
             var txt = "";
             //txt += '<select class="form-control fill" id="AulaId" name="AulaId" required>';
@@ -568,7 +561,6 @@ function addPerdiodo() {
 
 function getPeriodoByGrupoId() {
     var CicloId = $("#CicloId").val();
-    console.log(CicloId);
     $("#loadPeriodoByGrupoId").html('<div class="alert alert-info"><strong>Espere</strong> Cargando Contenido ... Esta acción puede tardar unos momentos <i class="pe-7s-config pe-spin pe-2x pe-va"></i></div>');
     $.ajax({
         type: "GET",
@@ -576,7 +568,6 @@ function getPeriodoByGrupoId() {
         data: "action=getPeriodoByGrupoId&CicloId=" + CicloId,
         success: function (text) {
             var date = text.data;
-            //console.log(date);
             setOptionPeriodos(date);
             var txt = "";
             txt += '<div class="table-responsive"> <table id="PeriodoByGrupoId" class="table table-striped table-bordered table-hover table-sm dt-responsive nowrap">';
@@ -733,7 +724,6 @@ function comboAluas() {
         url: "dataConect/API.php",
         data: "action=getcAulas",
         success: function (text) {
-            //console.log(text);
             var date = text.data;
             var txt = "";
             txt += '<option value="">Seleccione un Aula</option>';
@@ -756,7 +746,6 @@ function getcHorasByTurnoID(TurnoId, NivelId, CarreraId) {
         url: "dataConect/API.php",
         data: "action=getcHorasByTurnoID&NivelId=" + NivelId + "&CarreraId=" + CarreraId + "&TurnoId=" + TurnoId,
         success: function (text) {
-            //console.log(text);
             var date = text.data;
             var txt = "";
             //txt += '<select class="form-control fill" id="AulaId" name="AulaId" required>';
@@ -780,7 +769,6 @@ function getMaterias(idiCarrera, idigrado) {
         url: "dataConect/API.php",
         data: "action=getMateriasByCarreraAndGradoID&idicarrera=" + idiCarrera + "&GradosId=" + idigrado,
         success: function (text) {
-            //console.log(text);
             var date = text.data;
             var txt = "";
             //txt += '<select class="form-control fill" id="AulaId" name="AulaId" required>';
@@ -820,7 +808,6 @@ function getProfesores() {
         url: "dataConect/API.php",
         data: "action=getProfesores",
         success: function (text) {
-            //console.log(text);
             var date = text.data;
             var txt = "";
             //txt += '<select class="form-control fill" id="AulaId" name="AulaId" required>';
@@ -910,7 +897,7 @@ function GrupoEscolarInexist() {
     var idinivel = $('#niv').val();
     var TurnoId = $('#tur').val();
     var txt;
-    var r = confirm("Desea resetear horario? ");
+    // var r =  ("Desea resetear horario? ");
     $.ajax({
         type: "POST",
         url: "dataConect/API.php",
@@ -919,7 +906,7 @@ function GrupoEscolarInexist() {
             if (text == "success") {
                 getHorarioEscolarByGrupoId();
             } else {
-                swalert('Mensaje', text, 'info');
+                // swalert('Mensaje', text, 'info');
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
