@@ -202,10 +202,13 @@ if ($errorMSG == "") {
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <img src="asset/images/logo.png" width="15%"></img><br><a href=<?php echo $url_company_site ?> target="_blank" class="text-primary">Power by <?php echo $company_name ?></a>
+                            <!-- <img src="asset/images/logo.png" width="15%"></img><br> -->
+                            <a href=<?php echo $url_company_site ?> target="_blank" class="text-primary">Power by <?php echo $company_name ?></a>
                         </div>
                         <div class="form-group col-sm-6"><br>
-                            <div class="fb-share-button" data-href="<?php echo $url_company_kambal ?>capital_humano/ready-registration-form.php" data-layout="button_count" data-size="small"><a target="_blank" href=<?php echo $url_company_facebook ?> class="fb-xfbml-parse-ignore">Compartir</a></div>
+                            <div class="fb-share-button" data-href="<?php echo $url_company_kambal ?>capital_humano/ready-registration-form.php" data-layout="button_count" data-size="small">
+                                <!-- <a target="_blank" href=<?php echo $url_company_facebook ?> class="fb-xfbml-parse-ignore">Compartir</a> -->
+                            </div>
                         </div>
                     </div>
                 </div>
